@@ -46,6 +46,10 @@ $('document').ready(function() {
 						};
 					});
 
+					require(['paginator'], function(paginator) {
+						paginator.reload();
+					});
+
 					localStorage.setItem('masonry:layout', JSON.stringify(saved));
 				});
 			}
