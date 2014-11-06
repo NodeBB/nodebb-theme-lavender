@@ -47,7 +47,7 @@ $('document').ready(function() {
 					});
 
 					require(['paginator'], function(paginator) {
-						paginator.reload();
+						paginator.update();
 					});
 
 					localStorage.setItem('masonry:layout', JSON.stringify(saved));
