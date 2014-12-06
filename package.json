@@ -1,25 +1,26 @@
 {
-  "name": "nodebb-theme-lavender",
+  "name": "nodebb-theme-aspic",
   "version": "0.2.3",
-  "description": "Lavender Theme for NodeBB",
+  "description": "Aspic Theme for NodeBB",
   "main": "theme.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-theme-lavender"
+    "url": "https://github.com/kassius/nodebb-theme-aspic"
   },
   "keywords": [
     "nodebb",
     "lavender",
+    "aspic",
     "theme",
     "themes"
   ],
   "author": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
+    "name": "priapus",
+    "email": "kassivs@gmail.com"
   },
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-theme-lavender/issues"
+    "url": "https://github.com/kassius/nodebb-theme-aspic/issues"
   },
   "peerDependencies": {
     "nodebb-theme-vanilla": "^0.2.0"
