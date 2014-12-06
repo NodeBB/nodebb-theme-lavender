@@ -1,7 +1,7 @@
 {
-    "id": "nodebb-theme-lavender",
-    "name": "Lavender Theme for NodeBB",
-    "description": "A simple theme for NodeBB. Check out the theming guide that accompanies this work at http://burnaftercompiling.com",
-    "url": "https://www.github.com/psychobunny/nodebb-theme-lavender",
+    "id": "nodebb-theme-aspic",
+    "name": "Aspic Theme for NodeBB",
+    "description": "A variation of Lavender theme for NodeBB.",
+    "url": "https://www.github.com/kassius/nodebb-theme-aspic",
     "screenshot": "screenshot.png"
 }
