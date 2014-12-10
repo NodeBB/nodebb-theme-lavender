@@ -20,16 +20,18 @@
 
 <div class="row">
 
-	<div class="subcatcat-container col-lg-9 col-sm-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">>
+	<div class="subcatcat-container col-lg-9 col-sm-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
 
 		<div class="subcategories row">
-			<!-- BEGIN children -->
-			<!-- IMPORT partials/category_child.tpl -->
-			<!-- END children -->
+			<div class="col-lg-12 col-sm-12">
+				<!-- BEGIN children -->
+				<!-- IMPORT partials/category_child.tpl -->
+				<!-- END children -->
+			</div>
 		</div>
 
 		<div class="category row category-stuff-id-{cid}">
-			<div class="col-lg-12 col-sm-12" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+			<div class="col-lg-12 col-sm-12">
 				<div class="header category-tools clearfix">
 					<!-- IF privileges.topics:create -->
 					<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
