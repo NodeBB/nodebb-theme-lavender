@@ -23,6 +23,6 @@
     "url": "https://github.com/kassius/nodebb-theme-aspic/issues"
   },
   "peerDependencies": {
-    "nodebb-theme-vanilla": "^0.2.0"
+    "nodebb-theme-vanilla": "^0.1.0"
   }
 }
