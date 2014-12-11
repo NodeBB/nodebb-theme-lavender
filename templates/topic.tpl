@@ -10,20 +10,18 @@
 <input type="hidden" template-variable="postcount" value="{postcount}" />
 <input type="hidden" template-variable="viewcount" value="{viewcount}" />
 
+
 <div class="topic">
 	<ol class="breadcrumb">
-		<!-- BEGIN breadcrumbs -->
 		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<!-- IF !@last --><a href="{breadcrumbs.url}" itemprop="url"><!-- ENDIF !@last -->
-				<span itemprop="title">
-					{breadcrumbs.text}
-					<!-- IF @last -->
-					<!-- IF !feeds:disableRSS --><a target="_blank" href="{relative_path}/topic/{tid}.rss"><i class="fa fa-rss-square"></i></a><!-- ENDIF !feeds:disableRSS -->
-					<!-- ENDIF @last -->
-				</span>
-			<!-- IF !@last --></a><!-- ENDIF !@last -->
+			<a href="{relative_path}/" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
 		</li>
-		<!-- END breadcrumbs -->
+		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="{relative_path}/category/{category.slug}" itemprop="url"><span itemprop="title">{category.name}</span></a>
+		</li>
+		<li class="active" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<span itemprop="title">{title} <a target="_blank" href="{relative_path}/topic/{tid}.rss"><i class="fa fa-rss-square"></i></a></span>
+		</li>
 		<div class="loading-indicator pull-right" done="0" style="display:none;">
 			<i class="fa fa-refresh fa-spin"></i>
 		</div>
@@ -161,9 +159,7 @@
 									<!-- IF !posts.selfPost -->
 									<!-- IF posts.user.userslug -->
 									<!-- IF loggedIn -->
-									<!-- IF !config.disableChat -->
 									<button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
-									<!-- ENDIF !config.disableChat -->
 									<!-- ENDIF loggedIn -->
 									<!-- ENDIF posts.user.userslug -->
 									<!-- ENDIF !posts.selfPost -->
@@ -215,6 +211,7 @@
 	<!-- IMPORT partials/move_thread_modal.tpl -->
 	<!-- IMPORT partials/fork_thread_modal.tpl -->
 	<!-- IMPORT partials/move_post_modal.tpl -->
+	<span class="hidden" id="csrf" data-csrf="{csrf}"></span>
 </div>
 
 <!-- IMPORT partials/noscript/paginator.tpl -->
