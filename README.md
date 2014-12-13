@@ -7,15 +7,15 @@ A little variation of NodeBB theme Laveder by psychobunny
 
 **Home View**
 
-![Home View](https://www.github.com/kassius/nodebb-theme-aspic/screenshot/home.png)
+![Home View](screenshot/home.png)
 
 **Category View**
 
-![Category View](https://www.github.com/kassius/nodebb-theme-aspic/screenshot/category.png)
+![Category View](screenshot/category.png)
 
 **Topic View**
 
-![Topic View](https://www.github.co<F6>m/kassius/nodebb-theme-aspic/screenshot/topic.png)
+![Topic View](screenshot/topic.png)
 
 ## Installation
 
