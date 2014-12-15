@@ -1,27 +1,31 @@
-Lavender Theme for NodeBB
+Aspic Theme for NodeBB
 =========================
 
-A simple theme for NodeBB. Check out the theming guide that accompanies this work at http://burnaftercompiling.com/nodebb/nodebb-hands-on-theming-guide-part-1/
-
+A little variation of NodeBB theme Laveder by psychobunny
 
 ## Screenshots
 
 **Home View**
 
-[![Home View](http://i.imgur.com/fllGSje.png)](http://i.imgur.com/fllGSje.png)
+![Home View](screenshot/home.png)
 
 **Category View**
 
-[![Category View](http://i.imgur.com/qhX84In.png)](http://i.imgur.com/qhX84In.png)
+![Category View](screenshot/category.png)
 
 **Topic View**
 
-[![Topic View](http://i.imgur.com/W7cRtzQ.png)](http://i.imgur.com/W7cRtzQ.png)
+![Topic View](screenshot/topic.png)
 
 ## Installation
 
-    npm install nodebb-theme-lavender
+for now, go to your [nodebb root]/node_modules and clone with
 
+```
+git clone https://github.com/kassius/nodebb-theme-aspic
+```
+
+Then choose the theme from your Admin Panel.
 
 ## Credits
 
