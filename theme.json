@@ -1,7 +1,7 @@
 {
-    "id": "nodebb-theme-lavender",
-    "name": "Lavender Theme for NodeBB",
-    "description": "A simple theme for NodeBB. Check out the theming guide that accompanies this work at http://burnaftercompiling.com",
-    "url": "https://www.github.com/psychobunny/nodebb-theme-lavender",
+    "id": "nodebb-theme-lavender-seo",
+    "name": "SEO smart Lavender Theme for NodeBB",
+    "description": "An SEO smart derivative of the standard Lavender Theme. Forked from Lavender v0.1.13 - the version shipping with nodebb v0.5.7.",
+    "url": "https://www.github.com/baerrus/nodebb-theme-lavender",
     "screenshot": "screenshot.png"
 }
