@@ -1,7 +1,9 @@
-Lavender Theme for NodeBB
+SEO Friendly Lavender Theme for NodeBB
 =========================
 
-A simple theme for NodeBB. Check out the theming guide that accompanies this work at http://burnaftercompiling.com/nodebb/nodebb-hands-on-theming-guide-part-1/
+An SEO smart derivative of the standard Lavender Theme. Forked from Lavender v0.1.13 - the version that ships with nodebb v0.5.7. SEO friendly features include:
+
+- Server side generated pagination using plain HTML <a> tags. This requires no JS and is friendly to search engines as they do not execute JS when parsing web pages.
 
 
 ## Screenshots
@@ -20,7 +22,7 @@ A simple theme for NodeBB. Check out the theming guide that accompanies this wor
 
 ## Installation
 
-    npm install nodebb-theme-lavender
+    npm install nodebb-theme-lavender-seo
 
 
 ## Credits

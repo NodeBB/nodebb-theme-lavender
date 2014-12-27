@@ -1,11 +1,11 @@
 {
-  "name": "nodebb-theme-lavender",
+  "name": "nodebb-theme-lavender-seo",
   "version": "0.1.13",
-  "description": "Lavender Theme for NodeBB",
+  "description": "SEO Smart Lavender Theme",
   "main": "theme.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-theme-lavender"
+    "url": "https://github.com/baerrus/nodebb-theme-lavender"
   },
   "keywords": [
     "nodebb",
@@ -14,12 +14,12 @@
     "themes"
   ],
   "author": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
+    "name": "baerrus",
+    "email": "baerrus@optionsforum.net"
   },
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-theme-lavender/issues"
+    "url": "https://github.com/baerrus/nodebb-theme-lavender/issues"
   },
   "peerDependencies": {
     "nodebb-theme-vanilla": "~0.1.0"
