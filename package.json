@@ -1,6 +1,6 @@
 {
   "name": "nodebb-theme-lavender-seo",
-  "version": "0.1.14",
+  "version": "0.1.20",
   "description": "SEO Smart Lavender Theme. Compatible with nodebb v0.5.7",
   "main": "theme.less",
   "repository": {
@@ -11,7 +11,8 @@
     "nodebb",
     "lavender",
     "theme",
-    "themes"
+    "themes",
+    "seo"
   ],
   "author": {
     "name": "baerrus",
