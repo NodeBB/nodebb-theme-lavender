@@ -13,5 +13,8 @@
 		"static/lib/lavender.js",
 		"static/vendor/masonry.js",
 		"static/vendor/imagesLoaded.js"
-	]
+	],
+	"nbbpm": {
+		"compatibility": "^0.5.7"
+	}
 }
