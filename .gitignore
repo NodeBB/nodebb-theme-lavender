@@ -14,7 +14,7 @@ Vagrantfile
 .vagrant
 provision.sh
 *.komodoproject
-
+*~
 feeds/recent.rss
 
 # winston?

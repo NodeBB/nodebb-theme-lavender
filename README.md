@@ -4,7 +4,7 @@ SEO Friendly Lavender Theme for NodeBB
 An SEO smart derivative of the standard Lavender Theme. Forked from Lavender v0.1.13 - the version that ships with nodebb v0.5.7. SEO friendly features include:
 
 - Server side generated pagination using plain HTML <a> tags. This requires no JS and is friendly to search engines as they do not execute JS when parsing web pages.
-
+- Reply links in category view are made icons. Regular Lavender theme renders reply links anchored with "replied about N mounths|days|hours ago". That anchor text causes google some confusion as it assumes a heavily linked text means something.
 
 ## Screenshots
 
