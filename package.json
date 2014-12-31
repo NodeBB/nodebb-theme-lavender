@@ -1,7 +1,7 @@
 {
   "name": "nodebb-theme-lavender-seo",
   "version": "0.1.13",
-  "description": "SEO Smart Lavender Theme",
+  "description": "SEO Smart Lavender Theme. Compatible with nodebb v0.5.7",
   "main": "theme.less",
   "repository": {
     "type": "git",
