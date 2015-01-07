@@ -37,7 +37,7 @@
 							<!-- ELSE -->
 							<a href="{relative_path}/category/{categories.slug}" itemprop="url">
 							<!-- ENDIF categories.link-->
-								<h4><!-- IF categories.icon --><i class="fa {categories.icon} visible-xs-inline"></i> <!-- ENDIF categories.icon -->{categories.name}</h4>
+								<h2><!-- IF categories.icon --><i class="fa {categories.icon} visible-xs-inline"></i> <!-- ENDIF categories.icon -->{categories.name}</h2>
 							</a>
 							<div class="description" itemprop="description">{categories.description}</div>
 						</div>
