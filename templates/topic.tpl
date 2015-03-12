@@ -147,7 +147,7 @@
 									&bull; {posts.user.custom_profile_info.content}
 									<!-- END custom_profile_info -->
 								<!-- ENDIF posts.user.custom_profile_info.length -->
-								<span class="post-tools">
+								<span class="post-tools visible-md-inline visible-lg-inline">
 									<!-- IMPORT partials/topic/post-tools.tpl -->
 								</span>
 							</div>
