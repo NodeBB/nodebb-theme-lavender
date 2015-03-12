@@ -147,9 +147,19 @@
 									&bull; {posts.user.custom_profile_info.content}
 									<!-- END custom_profile_info -->
 								<!-- ENDIF posts.user.custom_profile_info.length -->
+
 								<span class="post-tools visible-md-inline visible-lg-inline">
 									<!-- IMPORT partials/topic/post-tools.tpl -->
 								</span>
+
+								<div class="btn-group post-tools-mobile visible-xs visible-sm">
+									<div class="dropdown">
+										<button title="[[topic:tools]]" class="btn btn-sm btn-link" data-toggle="dropdown" href="#"><i class="fa fa-gear"></i></button>
+										<ul class="dropdown-menu text-center pull-right" role="menu" aria-labelledby="dLabel">
+											<!-- IMPORT partials/topic/post-tools.tpl -->
+										</ul>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
