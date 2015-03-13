@@ -1,46 +1,49 @@
 <input type="hidden" template-variable="category_id" value="{cid}" />
 <input type="hidden" template-variable="category_name" value="{name}" />
+<input type="hidden" template-variable="category_slug" value="{slug}" />
 <input type="hidden" template-variable="topic_count" value="{topic_count}" />
 <input type="hidden" template-variable="currentPage" value="{currentPage}" />
 <input type="hidden" template-variable="pageCount" value="{pageCount}" />
 
-<ol class="breadcrumb">
-	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<a href="{relative_path}/" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
-	</li>
-	<!-- IF parent -->
-	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<a href="{relative_path}/category/{parent.slug}" itemprop="url"><span itemprop="title">{parent.name}</span></a>
-	</li>
-	<!-- ENDIF parent -->
-	<li class="active" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-		<span itemprop="title">{name} <a target="_blank" href="{relative_path}/category/{cid}.rss"><i class="fa fa-rss-square"></i></a></span>
-	</li>
-</ol>
-
-<div class="subcategories row">
-	<!-- BEGIN children -->
-	<!-- IMPORT partials/category_child.tpl -->
-	<!-- END children -->
-</div>
-
 <div class="category row">
 	<div class="{topic_row_size}" no-widget-class="col-lg-12 col-sm-12" no-widget-target="sidebar">
+		<!-- IMPORT partials/breadcrumbs.tpl -->
+		<div class="subcategories row">
+			<!-- BEGIN children -->
+			<!-- IMPORT partials/category_child.tpl -->
+			<!-- END children -->
+		</div>
+
 		<div class="header category-tools clearfix">
 			<!-- IF privileges.topics:create -->
 			<button id="new_post" class="btn btn-primary">[[category:new_topic_button]]</button>
+			<!-- ELSE -->
+				<!-- IF !loggedIn -->
+				<a href="/login?next=category/{slug}" class="btn btn-primary">[[category:guest-login-post]]</a>
+				<!-- ENDIF !loggedIn -->
 			<!-- ENDIF privileges.topics:create -->
 
 			<span class="pull-right">
 				<!-- IF loggedIn -->
-				<button type="button" class="btn btn-default btn-success watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored -->"><i class="fa fa-eye"></i> [[topic:watch]]</button>
-				<button type="button" class="btn btn-default btn-warning ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored -->"><i class="fa fa-eye-slash"></i> [[category:ignore]]</button>
+				<button type="button" class="btn btn-default btn-success watch <!-- IF !isIgnored -->hidden<!-- ENDIF !isIgnored -->">
+					<i class="fa fa-eye"></i>
+					<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[topic:watch]]</span>
+				</button>
+				<button type="button" class="btn btn-default btn-warning ignore <!-- IF isIgnored -->hidden<!-- ENDIF isIgnored -->">
+					<i class="fa fa-eye-slash"></i>
+					<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[category:ignore]]</span>
+				</button>
 				<!-- ENDIF loggedIn -->
+
 				<!-- IMPORT partials/category_tools.tpl -->
+
+				<!-- IMPORT partials/category_sort.tpl -->
 
 				<div class="dropdown share-dropdown inline-block">
 					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-						[[topic:share]] <span class="caret"></span>
+						<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[topic:share]]</span>
+						<span class="visible-xs-inline"><i class="fa fa-fw fa-share-alt"></i></span>
+						<span class="caret"></span>
 					</button>
 
 					<!-- IMPORT partials/share_dropdown.tpl -->
@@ -80,12 +83,13 @@
 								<p><strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
 									<a href="{relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
 									<small>
-
-									<!-- IF topics.user.userslug -->
-									[[global:posted_ago_by, <span class="timeago" title="{topics.relativeTime}"></span>, {topics.user.username}]]
-									<!-- ELSE -->
-									[[global:posted_ago_by_guest, <span class="timeago" title="{topics.relativeTime}"></span>]]
-									<!-- ENDIF topics.user.userslug -->
+									[[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
+									<!-- IF !topics.unreplied -->
+									<span class="hidden-md hidden-lg">
+									<br/>
+									<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}">[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]</a>
+									</span>
+									<!-- ENDIF !topics.unreplied -->
 									<br/>
 									<!-- IMPORT partials/category_tags.tpl -->
 									</small>
@@ -117,18 +121,11 @@
 			<!-- END topics -->
 		</ul>
 		<!-- IF config.usePagination -->
-		<div class="text-center">
-			<ul class="pagination">
-				<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
-				<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
-			</ul>
-		</div>
+			<!-- IMPORT partials/paginator.tpl -->
 		<!-- ENDIF config.usePagination -->
 	</div>
 
 	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar"></div>
-
-	<span class="hidden" id="csrf" data-csrf="{csrf}"></span>
 </div>
 
 <!-- IMPORT partials/move_thread_modal.tpl -->

@@ -10,22 +10,8 @@
 <input type="hidden" template-variable="postcount" value="{postcount}" />
 <input type="hidden" template-variable="viewcount" value="{viewcount}" />
 
-
 <div class="topic">
-	<ol class="breadcrumb">
-		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<a href="{relative_path}/" itemprop="url"><span itemprop="title">[[global:home]]</span></a>
-		</li>
-		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<a href="{relative_path}/category/{category.slug}" itemprop="url"><span itemprop="title">{category.name}</span></a>
-		</li>
-		<li class="active" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
-			<span itemprop="title">{title} <a target="_blank" href="{relative_path}/topic/{tid}.rss"><i class="fa fa-rss-square"></i></a></span>
-		</li>
-		<div class="loading-indicator pull-right" done="0" style="display:none;">
-			<i class="fa fa-refresh fa-spin"></i>
-		</div>
-	</ol>
+	<!-- IMPORT partials/breadcrumbs.tpl -->
 
 	<ul id="post-container" class="posts" data-tid="{tid}">
 		<!-- BEGIN posts -->
@@ -54,7 +40,11 @@
 									<!-- IF posts.user.groups.length -->
 									<div class="text-center">
 									<!-- BEGIN groups -->
-									<a href="{relative_path}/groups/{posts.user.groups.name}"><span class="label group-label inline-block" style="background-color: {posts.user.groups.labelColor};"><!-- IF posts.user.groups.icon --><i class="fa {posts.user.groups.icon}"></i> <!-- ENDIF posts.user.groups.icon -->{posts.user.groups.userTitle}</span></a><br/>
+									<!-- IF groups.selected -->
+									<!-- IF groups.userTitleEnabled -->
+									<a href="{relative_path}/groups/{posts.user.groups.slug}"><span class="label group-label inline-block" style="background-color: {posts.user.groups.labelColor};"><!-- IF posts.user.groups.icon --><i class="fa {posts.user.groups.icon}"></i> <!-- ENDIF posts.user.groups.icon -->{posts.user.groups.userTitle}</span></a><br/>
+									<!-- ENDIF groups.userTitleEnabled -->
+									<!-- ENDIF groups.selected -->
 									<!-- END groups -->
 									</div>
 									<!-- ENDIF posts.user.groups.length -->
@@ -102,11 +92,13 @@
 									</a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="postMenu_{posts.pid}">
 										<li role="presentation">
+											<!-- IF !posts.index -->
 											<!-- IF isFollowing -->
 											<a href="#" role="menuitem" tabindex="-1" class="follow" title="[[topic:unwatch.title]]"><span>[[topic:unwatch]]</span> <i class="fa fa-eye-slash"></i></a>
 											<!-- ELSE -->
 											<a href="#" role="menuitem" tabindex="-1" class="follow" title="[[topic:watch.title]]"><span>[[topic:watch]]</span> <i class="fa fa-eye"></i></a>
 											<!-- ENDIF isFollowing -->
+											<!-- ENDIF !posts.index -->
 										</li>
 										<li role="presentation">
 											<a role="menuitem" tabindex="-1" data-favourited="{posts.favourited}" class="favourite">
@@ -159,7 +151,9 @@
 									<!-- IF !posts.selfPost -->
 									<!-- IF posts.user.userslug -->
 									<!-- IF loggedIn -->
+									<!-- IF !config.disableChat -->
 									<button class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
+									<!-- ENDIF !config.disableChat -->
 									<!-- ENDIF loggedIn -->
 									<!-- ENDIF posts.user.userslug -->
 									<!-- ENDIF !posts.selfPost -->
@@ -188,9 +182,9 @@
 			</li>
 
 			<!-- IF !posts.index -->
-			<li class="post-bar" data-index="{posts.index}">
+			<div class="post-bar" data-index="{posts.index}">
 				<!-- IMPORT partials/post_bar.tpl -->
-			</li>
+			</div>
 			<!-- ENDIF !posts.index -->
 		<!-- END posts -->
 	</ul>
@@ -200,18 +194,12 @@
 	</div>
 
 	<!-- IF config.usePagination -->
-	<div class="text-center">
-		<ul class="pagination">
-			<li class="previous pull-left"><a href="#"><i class="fa fa-chevron-left"></i> [[global:previouspage]]</a></li>
-			<li class="next pull-right"><a href="#">[[global:nextpage]] <i class="fa fa-chevron-right"></i></a></li>
-		</ul>
-	</div>
+		<!-- IMPORT partials/paginator.tpl -->
 	<!-- ENDIF config.usePagination -->
 
 	<!-- IMPORT partials/move_thread_modal.tpl -->
 	<!-- IMPORT partials/fork_thread_modal.tpl -->
 	<!-- IMPORT partials/move_post_modal.tpl -->
-	<span class="hidden" id="csrf" data-csrf="{csrf}"></span>
 </div>
 
 <!-- IMPORT partials/noscript/paginator.tpl -->
