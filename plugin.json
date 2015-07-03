@@ -15,6 +15,7 @@
 			"hook": "filter:config.get", "method": "getConfig"
 		}
 	],
+    "languages": "languages",
 	"staticDirs": {
 		"vendor": "static/vendor",
 	  	"images": "static/images"
