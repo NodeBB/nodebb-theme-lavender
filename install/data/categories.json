@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Announcements",
+    "description": "Announcements regarding our community",
+    "bgColor": "#61c740",
+    "color": "#fff",
+    "icon" : "fa-bullhorn",
+    "order": 1
+  },
+  {
+    "name": "General Discussion",
+    "description": "A place to talk about whatever you want",
+    "bgColor": "#307bc7",
+    "color": "#fff",
+    "icon" : "fa-comments-o",
+    "order": 2
+  },
+  {
+    "name": "Blogs",
+    "description": "Blog posts from individual members",
+    "bgColor": "#fac934",
+    "color": "#fff",
+    "icon" : "fa-newspaper-o",
+    "order": 4
+  },
+  {
+    "name": "Comments & Feedback",
+    "description": "Got a question? Ask away!",
+    "bgColor": "#eb452f",
+    "color": "#fff",
+    "icon" : "fa-question",
+    "order": 3
+  }
+]
