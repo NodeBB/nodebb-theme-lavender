@@ -11,8 +11,11 @@ See [NodeBB Theme Documentation](https://docs.nodebb.org/en/latest/themes/create
 * sets up styles consistant with CoderDojo site
 * adds CoderDojo navbar to header
 
+## Screenshot
 
-# Local development
+[![Home View](http://i.imgur.com/6Oxfdj1.png)](http://i.imgur.com/6Oxfdj1.png)
+
+## Local development
 
 This guide assumes that database dependencies have been installed and are running. (Mongo or Redis)
 
