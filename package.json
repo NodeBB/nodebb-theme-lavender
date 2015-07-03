@@ -1,11 +1,11 @@
 {
-  "name": "nodebb-theme-lavender",
+  "name": "nodebb-theme-cd-lavender",
   "version": "1.0.45",
-  "description": "Lavender Theme for NodeBB",
+  "description": "Fork of Lavender Theme for NodeBB",
   "main": "theme.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-theme-lavender"
+    "url": "https://github.com/nathanpower-nearform/nodebb-theme-cd-lavender"
   },
   "keywords": [
     "nodebb",
@@ -14,8 +14,8 @@
     "themes"
   ],
   "author": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
+    "name": "nearform",
+    "email": "info@nearform.com"
   },
   "license": "BSD-2-Clause",
   "bugs": {
