@@ -1,28 +1,22 @@
-Lavender Theme for NodeBB
-=========================
+# CoderDojo Lavender Theme for NodeBB
 
-A simple theme for NodeBB. Check out the theming guide that accompanies this work at http://burnaftercompiling.com/nodebb/nodebb-hands-on-theming-guide-part-1/
+The CoderDojo Lavender theme is a fork [Lavender](https://github.com/NodeBB/nodebb-theme-lavender) base theme.
+
+See [NodeBB Theme Documentation](https://docs.nodebb.org/en/latest/themes/create.html) for more information. Also search for `nodebb-theme` on [NPM](https://www.npmjs.com/search?q=nodebb-theme) for inspiration.
+
+## Features
+
+* overrides the login template to show the CoderDojo logo & text
+* overrides the login language file to be CoderDojo specific (only English for now)
+
+In the future this theme will be used to make the Forums more like the rest of the CoderDojo sites.
 
 
 ## Screenshots
 
-**Home View**
-
-[![Home View](http://i.imgur.com/fllGSje.png)](http://i.imgur.com/fllGSje.png)
-
-**Category View**
-
-[![Category View](http://i.imgur.com/qhX84In.png)](http://i.imgur.com/qhX84In.png)
-
-**Topic View**
-
-[![Topic View](http://i.imgur.com/W7cRtzQ.png)](http://i.imgur.com/W7cRtzQ.png)
 
 ## Installation
-
-    npm install nodebb-theme-lavender
 
 
 ## Credits
 
-variables.less modified from "White Plum" by [divshot](https://github.com/divshot/)
