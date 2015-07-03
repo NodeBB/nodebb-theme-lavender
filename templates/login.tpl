@@ -56,7 +56,7 @@
         <h4>[[login:alternative_logins]]</h4>
         <ul class="alt-logins">
             <!-- BEGIN authentication -->
-            <li class="{authentication.name}"><a rel="nofollow" target="_top" href="{config.relative_path}{authentication.url}"><img src="plugins/nodebb-theme-coderdojo/images/coderdojo.png"> CoderDojo Community Platform</a></li>
+            <li class="{authentication.name}"><a rel="nofollow" target="_top" href="{config.relative_path}{authentication.url}"><img src="plugins/nodebb-theme-cd-lavender/images/coderdojo.png"> CoderDojo Community Platform</a></li>
             <!-- END authentication -->
         </ul>
     </div>
