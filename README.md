@@ -18,7 +18,7 @@ See [NodeBB Theme Documentation](https://docs.nodebb.org/en/latest/themes/create
 
 ## Screenshot
 
-[![Home View](http://i.imgur.com/6Oxfdj1.png)](http://i.imgur.com/6Oxfdj1.png)
+[![Home View](http://i.imgur.com/1DYWILY.png)](http://i.imgur.com/1DYWILY.png)
 
 ## Local development
 
