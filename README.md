@@ -1,13 +1,11 @@
 # CoderDojo Lavender Theme for NodeBB
 
 The CoderDojo Lavender theme is a fork [Lavender](https://github.com/NodeBB/nodebb-theme-lavender) base theme.
-A fork is currently required, rather than using NodeBB's theme inheritence model, as the Lavender theme already inherits from the Vanilla theme, and more than one level of inheritence is not currently supported.
-
-[Reference](https://community.nodebb.org/topic/5395/basetheme-causing-issues/2)
-
-Merging updates to Lavender theme should be feasible, most changes are to files that do not exist in original Lavender theme. Use cd-variables.less for global colour scheme changes.
+A fork is currently required, rather than using NodeBB's theme inheritence model, as the Lavender theme already inherits from the Vanilla theme, and [more than one level of inheritence is not currently supported.](https://community.nodebb.org/topic/5395/basetheme-causing-issues/2)
 
 See [NodeBB Theme Documentation](https://docs.nodebb.org/en/latest/themes/create.html) for more information. Also search for `nodebb-theme` on [NPM](https://www.npmjs.com/search?q=nodebb-theme) for inspiration.
+
+Reference variables in cd-variables.less for colour scheme.
 
 ## Features
 
@@ -24,9 +22,7 @@ See [NodeBB Theme Documentation](https://docs.nodebb.org/en/latest/themes/create
 
 This guide assumes that database dependencies have been installed and are running. (Mongo or Redis)
 
-* install NodeBB locally following the instructions [here](https://docs.nodebb.org/en/latest/installing/os.html) or install directly from github.
-
-* git clone the theme somewhere locally, e.g.
+* git clone this theme somewhere locally, e.g.
 
 ```
 ~/work $ git clone git@github.com:CoderDojo/nodebb-theme-cd-lavender.git
