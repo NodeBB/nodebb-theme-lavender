@@ -1,20 +1,24 @@
-<div class="cdgm-container">
-        <div class="container cdgm-menu">
-                <span class="cdgm-button">
+<button type="button" class="navbar-toggle navbar-left" data-toggle="collapse" data-target="#cd-navbar-collapse">
+        <i class="fa fa-globe"></i>
+</button>
+
+<div class="cdgm-container navbar-collapse collapse navbar-ex1-collapse" id="cd-navbar-collapse">
+        <ul class="container cdgm-menu dl-menu add-nav">
+                <li class="cdgm-button">
                         <a href="http://www.coderdojo.com">CoderDojo.com</a>
-                </span>
-                <span class="cdgm-button">
+                </li>
+                <li class="cdgm-button">
                         <a href="https://zen.coderdojo.com/">Find a Dojo</a>
-                </span>
-                <span class="cdgm-button">
+                </li>
+                <li class="cdgm-button">
                         <a href="http://kata.coderdojo.com/wiki/Main_Page">Resources</a>
-                </span>
-                <span class="cdgm-button">
+                </li>
+                <li class="cdgm-button">
                         <a href="http://help.coderdojo.com/">FAQ</a>
-                </span>
-                <span class="cdgm-button">
+                </li>
+                <li class="cdgm-button">
                         <a href="http://coolestprojects.org/">CoolestProjects2015</a>
-                </span>
-        </div>
+                </li>
+        </ul>
 </div>
 
