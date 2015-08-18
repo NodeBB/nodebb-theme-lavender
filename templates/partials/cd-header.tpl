@@ -8,7 +8,7 @@
                         <a href="http://www.coderdojo.com">CoderDojo.com</a>
                 </li>
                 <li class="cdgm-button">
-                        <a href="https://zen.coderdojo.com/">Find a Dojo</a>
+                        <a href="https://zen.coderdojo.com/">Zen</a>
                 </li>
                 <li class="cdgm-button">
                         <a href="http://kata.coderdojo.com/wiki/Main_Page">Resources</a>
