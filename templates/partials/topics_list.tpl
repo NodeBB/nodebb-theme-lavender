@@ -33,7 +33,7 @@
 									<small>
 									<a href="{config.relative_path}/category/{topics.category.slug}"><i class="fa {topics.category.icon}"></i> {topics.category.name}</a> &bull; <span class="timeago" title="{topics.timestampISO}"></span>
 									<!-- IF !topics.unreplied -->
-									<span class="hidden-md hidden-lg">
+									<span class="hidden-md hidden-lg" component="teaser">
 									<br/>
 									<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><span class="timeago" title="{topics.teaser.timestampISO}"></span></a>
 									</span>
@@ -55,7 +55,7 @@
 							<small>[[global:views]]</small>
 						</div>
 
-						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs">
+						<div class="col-xs-2 category-stat replies hidden-sm hidden-xs" component="teaser">
 							<!-- IF topics.unreplied -->
 							<p class="no-replies"><a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">[[category:no_replies]]</a></p>
 							<!-- ELSE -->
