@@ -4,7 +4,7 @@
 	<div class="category-icon">
 
 		<!-- IF ../link -->
-		<a style="color: {../color};" href="{../link}" itemprop="url" target="_blank">
+		<a style="color: {../color};" href="{../link}" itemprop="url">
 		<!-- ELSE -->
 		<a style="color: {../color};" href="{config.relative_path}/category/{../slug}" itemprop="url">
 		<!-- ENDIF ../link -->
@@ -29,7 +29,7 @@
 		<div class="category-box">
 			<div class="category-info">
 				<!-- IF ../link -->
-				<a href="{../link}" itemprop="url" target="_blank">
+				<a href="{../link}" itemprop="url">
 				<!-- ELSE -->
 				<a href="{config.relative_path}/category/{../slug}" itemprop="url">
 				<!-- ENDIF ../link -->
