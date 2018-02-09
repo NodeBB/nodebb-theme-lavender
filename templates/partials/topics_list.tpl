@@ -49,12 +49,17 @@
 							</div>
 						</div>
 
-						<div class="col-xs-1 category-stat hidden-xs">
+						<div class="col-xs-1 category-stat hidden-xs stats-votes">
+							<span class="human-readable-number" title="{topics.votes}">{topics.votes}</span><br />
+							<small>[[global:votes]]</small>
+						</div>
+
+						<div class="col-xs-1 category-stat hidden-xs stats-postcount">
 							<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong><br />
 							<small>[[global:posts]]</small>
 						</div>
 
-						<div class="col-xs-1 category-stat hidden-xs">
+						<div class="col-xs-1 category-stat hidden-xs stats-viewcount">
 							<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong><br />
 							<small>[[global:views]]</small>
 						</div>
