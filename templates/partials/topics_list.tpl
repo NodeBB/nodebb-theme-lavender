@@ -7,7 +7,7 @@
 				<div class="category-body">
 					<div class="row">
 
-						<div class="col-md-8 col-sm-9">
+						<div class="col-md-7 col-sm-8">
 
 							<!-- IF showSelect -->
 							<i class="fa fa-fw fa-square-o pull-left select pointer" component="topic/select"></i>
