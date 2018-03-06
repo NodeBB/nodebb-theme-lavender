@@ -80,7 +80,12 @@ $('document').ready(function() {
 		$(window).on('action:posts.loaded', function() {
 			doMasonry();
 		});
-
+		
+		//page load or reload to doMasonry
+		if($('.masonry').length) {
+		        doMasonry();
+		}
+		
 		function setupResizer() {
 			var div = $('<div class="overlay-container"><div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-arrows-h fa-2x"></i></div></div></div>');
 
@@ -131,11 +136,6 @@ $('document').ready(function() {
 	$(window).on('action:ajaxify.start', function() {
 		if ($('.navbar .navbar-collapse').hasClass('in')) {
 			$('.navbar-header button').click();
-		}
-	});
-	$(window).on('load', function() {
-		if ($('.masonry').length > 0) {
-			doMasonry();
 		}
 	});
 });
