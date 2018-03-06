@@ -133,4 +133,9 @@ $('document').ready(function() {
 			$('.navbar-header button').click();
 		}
 	});
+	$(window).on('load', function() {
+		if ($('.masonry').length > 0) {
+			doMasonry();
+		}
+	});
 });
