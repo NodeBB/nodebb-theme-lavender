@@ -50,7 +50,7 @@
 						</div>
 
 						<div class="col-xs-1 category-stat hidden-xs stats-votes">
-							<span class="human-readable-number" title="{topics.votes}">{topics.votes}</span><br />
+							<strong class="human-readable-number" title="{topics.votes}">{topics.votes}</strong><br />
 							<small>[[global:votes]]</small>
 						</div>
 
