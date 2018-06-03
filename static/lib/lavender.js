@@ -3,11 +3,13 @@ $('document').ready(function() {
 		'lavender/masonry',
 		'lavender/imagesLoaded',
 	], function(Masonry, imagesLoaded) {
-		var fixed = localStorage.getItem('fixed') || 1,
-			masonry;
+		var fixed = localStorage.getItem('fixed') || 1;
+		var masonry;
+		var masonryCalled = false;
 
 		function doMasonry() {
-			if($('.masonry').length) {
+			masonryCalled = true;
+			if ($('.masonry').length) {
 				masonry = new Masonry('.masonry', {
 					itemSelector: '.category-item',
 					columnWidth: '.category-item:not(.col-lg-12)',
@@ -80,6 +82,10 @@ $('document').ready(function() {
 		$(window).on('action:posts.loaded', function() {
 			doMasonry();
 		});
+
+		if ($('.masonry').length && !masonryCalled) {
+			doMasonry();
+		}
 
 		function setupResizer() {
 			var div = $('<div class="overlay-container"><div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-arrows-h fa-2x"></i></div></div></div>');
