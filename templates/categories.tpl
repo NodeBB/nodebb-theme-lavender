@@ -7,7 +7,7 @@
 		</div>
 	</div>
 
-	<div widget-area="sidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
+	<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
 		<!-- BEGIN widgets.sidebar -->
 		{{widgets.sidebar.html}}
 		<!-- END widgets.sidebar -->
