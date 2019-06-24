@@ -41,7 +41,7 @@
 	</div>
 
 	<!-- IF topics.length -->
-	<div widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
+	<div data-widget-area="sidebar" class="col-md-3 col-xs-12 category-sidebar <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
 		<!-- BEGIN widgets.sidebar -->
 		{{widgets.sidebar.html}}
 		<!-- END widgets.sidebar -->
