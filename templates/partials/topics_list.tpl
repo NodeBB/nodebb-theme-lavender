@@ -2,6 +2,7 @@
 			<meta itemprop="itemListOrder" content="descending">
 			<!-- BEGIN topics -->
 			<li component="category/topic" class="category-item {function.generateTopicClass}" itemprop="itemListElement" <!-- IMPORT partials/data/category.tpl -->>
+				<a id="{../index}" data-index="{../index}" component="topic/anchor"></a>
 				<meta itemprop="name" content="{function.stripTags, title}">
 
 				<div class="category-body">
