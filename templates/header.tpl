@@ -5,7 +5,7 @@
 	<!-- BEGIN metaTags -->
 	{function.buildMetaTag}
 	<!-- END metaTags -->
-	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/stylesheet.css?{config.cache-buster}" />
+	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/client.css?{config.cache-buster}" />
 	<!-- BEGIN linkTags -->
 	{function.buildLinkTag}
 	<!-- END linkTags -->
