@@ -1,6 +1,6 @@
 <!-- IF ../isSection -->
 <div component="categories/category" class="col-xs-12 category-item">
-	<h1>{../name}</h1>
+	<h1 class="section">{../name}</h1>
 </div>
 <!-- ELSE -->
 <div component="categories/category" class="<!-- IF ../class -->{../class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF ../class --> category-item" data-cid="{../cid}" data-numRecentReplies="{../numRecentReplies}">
