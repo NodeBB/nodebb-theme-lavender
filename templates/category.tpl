@@ -3,10 +3,15 @@
 
 		<!-- IMPORT partials/breadcrumbs.tpl -->
 
-		<div class="subcategories row">
-			<!-- BEGIN children -->
-			<!-- IMPORT partials/category_child.tpl -->
-			<!-- END children -->
+		<div class="subcategories">
+			<div class="row" component="category/subcategory/container">
+				{{{each children}}}
+				<!-- IMPORT partials/category_child.tpl -->
+				{{{end}}}
+			</div>
+			{{{ if hasMoreSubCategories}}}
+			<button class="btn btn-default" component="category/load-more-subcategories">[[category:x-more-categories, {subCategoriesLeft}]]</button>
+			{{{ end }}}
 		</div>
 
 		<div class="header category-tools clearfix">
