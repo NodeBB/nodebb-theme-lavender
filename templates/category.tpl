@@ -4,6 +4,9 @@
 		<!-- IMPORT partials/breadcrumbs.tpl -->
 
 		<div class="subcategories">
+			{{{ if hasMoreSubCategories }}}
+			<div><!-- IMPORT partials/category-selector.tpl --></div>
+			{{{ end }}}
 			<div class="row" component="category/subcategory/container">
 				{{{each children}}}
 				<!-- IMPORT partials/category_child.tpl -->
