@@ -43,7 +43,7 @@
 			</div>
 
 			<!-- IF !../link -->
-			<!-- BEGIN posts -->
+			{{{ each posts }}}
 			<div component="category/posts" class="post-preview clearfix">
 				<strong><a href="{config.relative_path}/topic/{../topic.slug}">{../topic.title}</a></strong>
 				<hr/>
@@ -67,7 +67,7 @@
 					<a href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->">[[global:read_more]]</a>
 				</span>
 			</div>
-			<!-- END posts -->
+			{{{ end }}}
 			<!-- ENDIF !../link -->
 		</div>
 	</div>

@@ -4,7 +4,7 @@
 	<div component="topic/deleted/message" class="alert alert-warning<!-- IF !deleted --> hidden<!-- ENDIF !deleted -->">[[topic:deleted_message]]</div>
 
 	<ul component="topic" id="post-container" class="posts" data-tid="{tid}">
-		<!-- BEGIN posts -->
+		{{{ each posts }}}
 			<li component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
 				<a component="post/anchor" data-index="{posts.index}" name="{posts.index}"></a>
 				<div class="post-row">
@@ -90,9 +90,9 @@
 									<!-- ENDIF !reputation:disabled -->
 
 									<!-- IF posts.user.custom_profile_info.length -->
-										<!-- BEGIN custom_profile_info -->
+										{{{ each custom_profile_info}}}
 										&bull; {posts.user.custom_profile_info.content}
-										<!-- END custom_profile_info -->
+										{{{ end }}}
 									<!-- ENDIF posts.user.custom_profile_info.length -->
 									<span class="post-tools">
 										<!-- IF !posts.selfPost -->
@@ -117,7 +117,7 @@
 				<div class="post-bar-placeholder"></div>
 				<!-- ENDIF !posts.index -->
 			</li>
-		<!-- END posts -->
+		{{{ end }}}
 	</ul>
 
 	<div class="post-bar col-xs-12">
