@@ -26,6 +26,6 @@
     "url": "https://github.com/NodeBB/nodebb-theme-lavender/issues"
   },
   "nbbpm": {
-    "compatibility": "^1.17.0"
+    "compatibility": "^2.0.0"
   }
 }
