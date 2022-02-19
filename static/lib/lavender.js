@@ -1,7 +1,7 @@
 $('document').ready(function() {
-	requirejs([
-		'lavender/masonry',
-		'lavender/imagesLoaded',
+	require([
+		'masonry-layout',
+		'imagesloaded',
 	], function(Masonry, imagesLoaded) {
 		var fixed = localStorage.getItem('fixed') || 1;
 		var masonry;

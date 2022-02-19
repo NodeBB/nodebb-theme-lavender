@@ -13,6 +13,10 @@
     "theme",
     "themes"
   ],
+  "dependencies": {
+    "imagesloaded": "4.1.4",
+    "masonry-layout": "4.2.2"
+  },
   "author": {
     "name": "psychobunny",
     "email": "psycho.bunny@hotmail.com"
