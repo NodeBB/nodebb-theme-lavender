@@ -20,5 +20,8 @@
 	],
 	"scripts": [
 		"static/lib/lavender.js"
-	]
+	],
+	"modules": {
+		"../admin/plugins/lavender.js": "static/lib/admin.js"
+	}
 }

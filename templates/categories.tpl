@@ -8,7 +8,7 @@
 		{{{ if pagination.pages.length }}}
 		<div><!-- IMPORT partials/category-selector.tpl --></div>
 		{{{ end }}}
-		<div class="row <!-- IF !disableMasonry -->masonry<!-- ENDIF !disableMasonry -->">
+		<div class="row <!-- IF !config.disableMasonry -->masonry<!-- ENDIF !config.disableMasonry -->">
 			<!-- BEGIN categories -->
 			<!-- IMPORT partials/category_child.tpl -->
 			<!-- END categories -->
