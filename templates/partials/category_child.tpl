@@ -7,11 +7,7 @@
 	<meta itemprop="name" content="{../name}">
 
 	<div class="category-icon">
-		<!-- IF ../link -->
-		<a style="color: {../color};" href="{../link}" itemprop="url">
-		<!-- ELSE -->
-		<a style="color: {../color};" href="{config.relative_path}/category/{../slug}" itemprop="url">
-		<!-- ENDIF ../link -->
+		<a style="color: {./color};" href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
 			<div
 				id="category-{../cid}" class="position-relative category-header category-header-image-{../imageClass}"
 				style="
@@ -20,9 +16,9 @@
 					color: {../color};
 				"
 			>
-				<!-- IF !../link -->
+				{{{ if !./link }}}
 				<span class="badge {../unread-class}"><i class="fa fa-book" data-bs-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{../totalTopicCount}">{../totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-bs-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{../totalPostCount}">{../totalPostCount}</span></span>
-				<!-- ENDIF !../link -->
+				{{{ end }}}
 
 				<!-- IF ../icon -->
 				<div><i class="fa {../icon} fa-4x"></i></div>
@@ -32,17 +28,13 @@
 
 		<div class="category-box">
 			<div class="category-info">
-				<!-- IF ../link -->
-				<a href="{../link}" itemprop="url">
-				<!-- ELSE -->
-				<a href="{config.relative_path}/category/{../slug}" itemprop="url">
-				<!-- ENDIF ../link -->
+				<a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
 					<h4 class="text-truncate"><!-- IF ../icon --><i class="fa {../icon} visible-xs-inline"></i> <!-- ENDIF ../icon -->{../name}</h4>
 				</a>
 				<div class="description ms-0" itemprop="description">{../descriptionParsed}</div>
 			</div>
 
-			<!-- IF !../link -->
+			{{{ if !./link }}}
 			{{{ each ./posts }}}
 			<div component="category/posts" class="post-preview clearfix">
 				<strong><a href="{config.relative_path}/topic/{../topic.slug}">{../topic.title}</a></strong>
@@ -63,7 +55,7 @@
 				</span>
 			</div>
 			{{{ end }}}
-			<!-- ENDIF !../link -->
+			{{{ end }}}
 		</div>
 	</div>
 </div>
