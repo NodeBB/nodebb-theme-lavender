@@ -1,44 +1,47 @@
 <!DOCTYPE html>
-<html lang="{function.localeToHTML, defaultLang}" <!-- IF languageDirection -->data-dir="{languageDirection}" style="direction: {languageDirection};" <!-- ENDIF languageDirection -->>
+<html lang="{function.localeToHTML, userLang, defaultLang}" {{{if languageDirection}}}data-dir="{languageDirection}" style="direction: {languageDirection};"{{{end}}}>
 <head>
 	<title>{browserTitle}</title>
-	<!-- BEGIN metaTags -->
-	{function.buildMetaTag}
-	<!-- END metaTags -->
-	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/client.css?{config.cache-buster}" />
-	<!-- BEGIN linkTags -->
-	{function.buildLinkTag}
-	<!-- END linkTags -->
-
-	<!--[if lt IE 9]>
-  		<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.3.0/es5-shim.min.js"></script>
-  		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-  		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-  		<script>__lt_ie_9__ = 1;</script>
-	<![endif]-->
+	{{{each metaTags}}}{function.buildMetaTag}{{{end}}}
+	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/client{{{if bootswatchSkin}}}-{bootswatchSkin}{{{end}}}{{{ if (languageDirection=="rtl") }}}-rtl{{{ end }}}.css?{config.cache-buster}" />
+	{{{each linkTags}}}{function.buildLinkTag}{{{end}}}
 
 	<script>
 		var config = JSON.parse('{{configJSON}}');
 		var app = {
 			user: JSON.parse('{{userJSON}}')
 		};
+
+		document.documentElement.style.setProperty('--panel-offset', `${localStorage.getItem('panelOffset') || 0}px`);
 	</script>
 
-	<!-- IF useCustomHTML -->
+	{{{if useCustomHTML}}}
 	{{customHTML}}
-	<!-- END -->
-	<!-- IF useCustomCSS -->
-	<style type="text/css">{{customCSS}}</style>
-	<!-- END -->
-
+	{{{end}}}
+	{{{if useCustomCSS}}}
+	<style>{{customCSS}}</style>
+	{{{end}}}
 </head>
 
-<body class="{bodyClass}">
-	<div class="navbar navbar-default navbar-fixed-top header" role="navigation" id="header-menu" component="navbar">
-		<div class="loading-bar"></div>
-		<div class="container">
-			<!-- IMPORT partials/menu.tpl -->
-		</div>
-	</div>
-	<div class="container" id="content" component="content">
-	<!-- IMPORT partials/noscript/warning.tpl -->
+<body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}}">
+	<nav id="menu" class="slideout-menu hidden">
+		<!-- IMPORT partials/slideout-menu.tpl -->
+	</nav>
+	<nav id="chats-menu" class="slideout-menu hidden">
+		<!-- IMPORT partials/chats-menu.tpl -->
+	</nav>
+
+	<main id="panel" class="slideout-panel">
+		<nav class="navbar sticky-top navbar-expand-lg bg-light header border-bottom" id="header-menu" component="navbar">
+			<div class="container justify-content-start flex-nowrap">
+				<!-- IMPORT partials/menu.tpl -->
+			</div>
+		</nav>
+		<script>
+			const rect = document.getElementById('header-menu').getBoundingClientRect();
+			const offset = Math.max(0, rect.bottom);
+			document.documentElement.style.setProperty('--panel-offset', offset + `px`);
+		</script>
+		<div class="container pt-3" id="content">
+		<!-- IMPORT partials/noscript/warning.tpl -->
+		<!-- IMPORT partials/noscript/message.tpl -->

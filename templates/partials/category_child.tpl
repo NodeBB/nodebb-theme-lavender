@@ -1,9 +1,9 @@
 <!-- IF ../isSection -->
-<div component="categories/category" class="col-xs-12 category-item">
+<div component="categories/category" class="col-12 category-item">
 	<h1 class="section">{../name}</h1>
 </div>
 <!-- ELSE -->
-<div component="categories/category" class="<!-- IF ../class -->{../class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF ../class --> category-item" data-cid="{../cid}" data-numRecentReplies="{../numRecentReplies}">
+<div component="categories/category" class="<!-- IF ../class -->{../class}<!-- ELSE -->col-md-3 col-sm-6 col-12<!-- ENDIF ../class --> category-item" data-cid="{../cid}" data-numRecentReplies="{../numRecentReplies}">
 	<meta itemprop="name" content="{../name}">
 
 	<div class="category-icon">
@@ -13,7 +13,7 @@
 		<a style="color: {../color};" href="{config.relative_path}/category/{../slug}" itemprop="url">
 		<!-- ENDIF ../link -->
 			<div
-				id="category-{../cid}" class="category-header category-header-image-{../imageClass}"
+				id="category-{../cid}" class="position-relative category-header category-header-image-{../imageClass}"
 				style="
 					<!-- IF ../backgroundImage -->background-image: url({../backgroundImage});<!-- ENDIF ../backgroundImage -->
 					<!-- IF ../bgColor -->background-color: {../bgColor};<!-- ENDIF ../bgColor -->
@@ -21,7 +21,7 @@
 				"
 			>
 				<!-- IF !../link -->
-				<span class="badge {../unread-class}"><i class="fa fa-book" data-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{../totalTopicCount}">{../totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{../totalPostCount}">{../totalPostCount}</span></span>
+				<span class="badge {../unread-class}"><i class="fa fa-book" data-bs-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{../totalTopicCount}">{../totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-bs-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{../totalPostCount}">{../totalPostCount}</span></span>
 				<!-- ENDIF !../link -->
 
 				<!-- IF ../icon -->
@@ -37,13 +37,13 @@
 				<!-- ELSE -->
 				<a href="{config.relative_path}/category/{../slug}" itemprop="url">
 				<!-- ENDIF ../link -->
-					<h4><!-- IF ../icon --><i class="fa {../icon} visible-xs-inline"></i> <!-- ENDIF ../icon -->{../name}</h4>
+					<h4 class="text-truncate"><!-- IF ../icon --><i class="fa {../icon} visible-xs-inline"></i> <!-- ENDIF ../icon -->{../name}</h4>
 				</a>
-				<div class="description" itemprop="description">{../descriptionParsed}</div>
+				<div class="description ms-0" itemprop="description">{../descriptionParsed}</div>
 			</div>
 
 			<!-- IF !../link -->
-			{{{ each posts }}}
+			{{{ each ./posts }}}
 			<div component="category/posts" class="post-preview clearfix">
 				<strong><a href="{config.relative_path}/topic/{../topic.slug}">{../topic.title}</a></strong>
 				<hr/>

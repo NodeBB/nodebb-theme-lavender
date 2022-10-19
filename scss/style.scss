@@ -1,4 +1,3 @@
-@import "variables";
 @import "whiteplum";
 @import "keyframes";
 
@@ -11,7 +10,7 @@
  	position: absolute;
  	left: 0px;
  	height: 2px;
- 	background: @brand-primary;
+ 	background: $primary;
  	z-index: 1;
 
  	-webkit-transition: width 0.2s ease-in;
@@ -47,7 +46,7 @@
 	#notif-list, #chat-list {
 		li {
 			&.unread {
-				background-color: @brand-warning;
+				background-color: $warning;
 			}
 		}
 	}
@@ -56,7 +55,7 @@
 .chats-list {
 	li {
 		&.unread {
-			background-color: @brand-warning;
+			background-color: $warning;
 		}
 	}
 }
@@ -88,7 +87,6 @@
 .composer {
 	.instructions {
 		line-height: 25px;
-
 	}
 }
 

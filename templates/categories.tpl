@@ -1,3 +1,8 @@
+<div data-widget-area="header">
+	{{{each widgets.header}}}
+	{{widgets.header.html}}
+	{{{end}}}
+</div>
 <div class="row categories" itemscope itemtype="http://www.schema.org/ItemList">
 	<div class="<!-- IF widgets.sidebar.length -->col-lg-9 col-sm-12<!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
 		{{{ if pagination.pages.length }}}
@@ -16,4 +21,9 @@
 		{{widgets.sidebar.html}}
 		<!-- END widgets.sidebar -->
 	</div>
+</div>
+<div data-widget-area="footer">
+	{{{each widgets.footer}}}
+	{{widgets.footer.html}}
+	{{{end}}}
 </div>

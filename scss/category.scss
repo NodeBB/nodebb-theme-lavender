@@ -26,22 +26,6 @@
 		}
 	}
 
-	.category-item {
-		-webkit-box-shadow: inset 0px 0px 2px 2px #ffffff;
-		box-shadow: inset 0px 0px 2px 2px #ffffff;
-		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-		box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-		&.unread {
-    		border-left: 2px solid @brand-primary;
-    		margin-left: -2px;
-    	}
-
-		> h1.section {
-			font-size: 32px;
-			font-weight: 400;
-		}
-	}
-
 	.category-body {
 		padding: 10px;
 		padding-bottom:  5px;
@@ -52,20 +36,28 @@
 		float: left;
 		margin-left: 15px;
 		margin-right: 15px;
-
-		img, .user-icon {
-			.user-icon-style(50px, 2.4rem);
-		}
 	}
 
 	.category-text {
-		font-size: 18px;
 		color: #666;
 		overflow: hidden;
+	}
+}
 
-		.fa-stack {
-			font-size: 65%;
-			border-radius: 50%;
+.topic-list {
+	.category-item {
+		-webkit-box-shadow: inset 0px 0px 2px 2px #ffffff;
+		box-shadow: inset 0px 0px 2px 2px #ffffff;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+		box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+		&.unread {
+			border-left: 2px solid $primary;
+			margin-left: -2px;
+		}
+
+		> h1.section {
+			font-size: 32px;
+			font-weight: 400;
 		}
 	}
 }
@@ -83,7 +75,7 @@
 	padding-left: 8px !important;
 	padding-right: 8px !important;
 
-	.select {
+	[component="topic/select"] {
 		line-height:55px;
 	}
 
@@ -112,19 +104,15 @@
 
 	.category-box {
 		position: relative;
-		background: @panel-bg;
-
-		@media (min-width: @screen-md-min) {
-
-		}
+		background: $card-bg;
 
 		min-height: 30px;
 		margin-top: -10px;
 
 		.category-info {
-			background: @panel-default-heading-bg;
+			background: $card-cap-bg;
 			padding:10px;
-			border-bottom: 1px solid darken(@panel-default-heading-bg, 10%);
+			border-bottom: 1px solid darken($card-cap-bg, 10%);
 
 			h4 {
 				font-weight: bold;
@@ -150,7 +138,7 @@
 	}
 	.category-box:after {
 		border-color: rgba(140, 113, 242, 0);
-		border-bottom-color: @panel-default-heading-bg;
+		border-bottom-color: $card-cap-bg;
 		border-width: 10px;
 		margin-left: -10px;
 	}
@@ -189,7 +177,6 @@
 		}
 
 		.post-preview-content {
-
 			max-height: 250px;
 			overflow: hidden;
 			position: relative;
@@ -202,10 +189,6 @@
 				border-left-width: 3px;
 			}
 		}
-	}
-
-	.teaser-pic, .teaser-pic.user-icon {
-		.user-icon-style(20px, 1.3rem);
 	}
 }
 
