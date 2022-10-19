@@ -1,0 +1,41 @@
+// only overrides to bs5 variables here
+
+// lavender colors
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$primary: #967bb6!default;
+$secondary: $gray-600 !default;
+$success: adjust-hue(#5cb85c, -10)!default;
+$info: adjust-hue(#5bc0de, 20)!default;
+$warning: adjust-hue(#f0ad4e, -15)!default;
+$danger: adjust-hue(#d9534f, -20)!default;
+$light: $gray-100 !default;
+$dark: $gray-900 !default;
+$link-decoration:none !default;
+
+$body-bg: $white !default;
+$body-color: $gray-900 !default;
+
+// font
+$font-family-sans-serif:  -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+// BS5 default is 1rem(16px)
+$font-size-base: 0.875rem!default;
+
+// no rounded in persona
+$enable-rounded: false;
+
+// no caret on dropdown-toggle
+$enable-caret: false;
+
+// disable smooth scroll, this makes window.scrollTo(0,0) in ajaxify.js take x milliseconds
+$enable-smooth-scroll: false;

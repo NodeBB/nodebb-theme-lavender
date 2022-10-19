@@ -17,14 +17,10 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="topic-profile-pic hidden-xs text-center">
-										<a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
-											<!-- IF posts.user.picture -->
-											<img itemprop="image" component="user/picture" data-uid="{posts.user.uid}" src="{posts.user.picture}" align="left" class="img-thumbnail" />
-											<!-- ELSE -->
-											<div class="user-icon" style="background-color: {posts.user.icon:bgColor};">{posts.user.icon:text}</div>
-											<!-- ENDIF posts.user.picture -->
+										<a class="img-thumbnail d-block" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
+											{buildAvatar(./user, "70px", false, "", "user/picture")}
 										</a>
-										<small class="username" title="{posts.user.username}"><a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">{posts.user.username}</a></small>
+										<small class="username" title="{posts.user.username}"><a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.username}</a></small>
 
 										<!-- IF posts.user.banned -->
 										<div class="text-center">
@@ -58,78 +54,80 @@
 								</div>
 							</div>
 						</div>
-						<div class="topic-footer">
-							<div class="row">
-								<div class="">
-									<small class="pull-right">
-										<span>
-											<!-- IF posts.user.userslug -->
-											<i component="user/status" class="fa fa-circle status {posts.user.status}" title='[[global:{posts.user.status}]]'></i>
-											<!-- ENDIF posts.user.userslug -->
-											<span data-username="{posts.user.username}" data-uid="{posts.user.uid}">
-												<!-- IF posts.user.uid -->
-												<strong><a href="{config.relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong> | <span class="timeago" title="{posts.timestampISO}"></span>
-												<!-- ELSE -->
-												[[global:guest]] | <span class="timeago" title="{posts.timestampISO}"></span>
-												<!-- ENDIF posts.user.uid -->
-											</span>
-										</span>
+						<div class="topic-footer d-flex justify-content-between border-top align-items-center">
+							<div>
 
-
-										<span component="post/editor" class="<!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">, [[global:last_edited_by, {posts.editor.username}]] <span class="timeago" title="{posts.editedISO}"></span></span>
-
-									</small>
-
-									<div class="dropdown moderator-tools" component="post/tools">
-										<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
-										<ul class="dropdown-menu" role="menu"></ul>
-									</div>
-
-									<!-- IF !reputation:disabled -->
-									&bull;
-									<a component="post/upvote" href="#" class="upvote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted -->">
-										<i class="fa fa-chevron-up"></i>
-									</a>
-									<span component="post/vote-count" class="votes" data-votes="{posts.votes}">{posts.votes}</span>
-									<!-- IF !downvote:disabled -->
-									<a component="post/downvote" href="#" class="downvote<!-- IF posts.downvoted --> downvoted<!-- ENDIF posts.downvoted -->">
-										<i class="fa fa-chevron-down"></i>
-									</a>
-									<!-- ENDIF !downvote:disabled -->
-									<!-- ENDIF !reputation:disabled -->
-
-									<!-- IF posts.user.custom_profile_info.length -->
-										{{{ each custom_profile_info}}}
-										&bull; {posts.user.custom_profile_info.content}
-										{{{ end }}}
-									<!-- ENDIF posts.user.custom_profile_info.length -->
-									<span class="post-tools">
-										<!-- IF !posts.selfPost -->
-										<!-- IF posts.user.userslug -->
-										<!-- IF loggedIn -->
-										<!-- IF !config.disableChat -->
-										<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
-										<!-- ENDIF !config.disableChat -->
-										<!-- ENDIF loggedIn -->
-										<!-- ENDIF posts.user.userslug -->
-										<!-- ENDIF !posts.selfPost -->
-
-										<button component="post/quote" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
-										<button component="post/reply" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
-									</span>
+								<div class="dropdown moderator-tools" component="post/tools">
+									<a href="#" data-bs-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
+									<ul class="dropdown-menu" role="menu"></ul>
 								</div>
+
+								<!-- IF !reputation:disabled -->
+								&bull;
+								<a component="post/upvote" href="#" class="upvote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted -->">
+									<i class="fa fa-chevron-up"></i>
+								</a>
+								<span component="post/vote-count" class="votes" data-votes="{posts.votes}">{posts.votes}</span>
+								<!-- IF !downvote:disabled -->
+								<a component="post/downvote" href="#" class="downvote<!-- IF posts.downvoted --> downvoted<!-- ENDIF posts.downvoted -->">
+									<i class="fa fa-chevron-down"></i>
+								</a>
+								<!-- ENDIF !downvote:disabled -->
+								<!-- ENDIF !reputation:disabled -->
+
+								<!-- IF posts.user.custom_profile_info.length -->
+									{{{ each custom_profile_info}}}
+									&bull; {posts.user.custom_profile_info.content}
+									{{{ end }}}
+								<!-- ENDIF posts.user.custom_profile_info.length -->
+								<span class="post-tools">
+									<!-- IF !posts.selfPost -->
+									<!-- IF posts.user.userslug -->
+									<!-- IF loggedIn -->
+									<!-- IF !config.disableChat -->
+									<button component="post/chat" class="btn btn-sm btn-link chat" type="button" title="[[topic:chat]]"><i class="fa fa-comment"></i><span class="hidden-xs-inline"> [[topic:chat]]</span></button>
+									<!-- ENDIF !config.disableChat -->
+									<!-- ENDIF loggedIn -->
+									<!-- ENDIF posts.user.userslug -->
+									<!-- ENDIF !posts.selfPost -->
+
+									<button component="post/quote" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button" title="[[topic:quote]]"><i class="fa fa-quote-left"></i><span class="hidden-xs-inline"> [[topic:quote]]</span></button>
+									<button component="post/reply" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
+								</span>
+							</div>
+							<div class="d-flex pe-3">
+								<small class="">
+									<span>
+										<!-- IF posts.user.userslug -->
+										<i component="user/status" class="fa fa-circle status {posts.user.status}" title='[[global:{posts.user.status}]]'></i>
+										<!-- ENDIF posts.user.userslug -->
+										<span data-username="{posts.user.username}" data-uid="{posts.user.uid}">
+											<!-- IF posts.user.uid -->
+											<strong><a href="{config.relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong> | <span class="timeago" title="{posts.timestampISO}"></span>
+											<!-- ELSE -->
+											[[global:guest]] | <span class="timeago" title="{posts.timestampISO}"></span>
+											<!-- ENDIF posts.user.uid -->
+										</span>
+									</span>
+
+
+									<span component="post/editor" class="<!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">, [[global:last_edited_by, {posts.editor.username}]] <span class="timeago" title="{posts.editedISO}"></span></span>
+
+								</small>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- IF !posts.index -->
-				<div class="post-bar-placeholder"></div>
+				<div class="clearfix">
+					<div class="post-bar-placeholder"></div>
+				</div>
 				<!-- ENDIF !posts.index -->
 			</li>
 		{{{ end }}}
 	</ul>
 
-	<div class="post-bar col-xs-12">
+	<div class="post-bar col-12 clearfix">
 		<!-- IMPORT partials/post_bar.tpl -->
 	</div>
 

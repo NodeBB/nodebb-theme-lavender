@@ -31,9 +31,6 @@
 		 	-o-transition: opacity 0.25s ease-in;
 		 	-ms-transition: opacity 0.25s ease-in;
 		 	transition: opacity 0.25s ease-in;
-			button {
-				color: @gray-dark;
-			}
 		}
 
 		&:hover {
@@ -67,14 +64,13 @@
 		margin-top: 15px;
 		margin-bottom: 15px;
 		padding: 10px;
-		border-left: 2px solid @brand-primary;
-		float: initial;
+		border-left: 2px solid $primary;
 	}
 
 	.post-bar, .post-row {
-		background-color: @panel-bg;
-		-webkit-box-shadow: inset 0px 0px 2px 2px @panel-bg;
-		box-shadow: inset 0px 0px 2px 2px @panel-bg;
+		background-color: $card-bg;
+		-webkit-box-shadow: inset 0px 0px 2px 2px $card-bg;
+		box-shadow: inset 0px 0px 2px 2px $card-bg;
 		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 		box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 	}
@@ -86,7 +82,6 @@
 
 
 	.topic-profile-pic {
-		width: 70px;
 		float: left;
 		margin-left: 15px;
 		margin-right: 15px;
@@ -113,14 +108,14 @@
 	}
 
 	.posts {
-		> li {
+		> li[component="post"] {
 			padding-bottom: 0px;
-			border-left: 2px solid @brand-primary;
+			border-left: 2px solid $primary;
 			.topic-title {
 				margin-top: 0px;
 				margin-bottom: 5px;
 				font-weight: 500;
-				color: @brand-primary;
+				color: $primary;
 				display: none;
 				font-size: 24px;
 			}
@@ -138,41 +133,9 @@
 		}
 	}
 
-	[component="post/upvote"], [component="post/downvote"] {
-		color: @gray-light;
-		width: 20px;
-		height: 20px;
-		line-height: 18px;
-		text-align: center;
-		display: inline-block;
-	}
-
-	[component="post/upvote"].upvoted, [component="post/downvote"].downvoted {
-		color: @brand-primary;
-		line-height: 18px;
-	}
-
-	.menu-icon {
-		margin-right: 5px;
-	}
-
 	.dropdown {
 		display: inline-block;
 	}
-
-	.topic-footer {
-		border-top: 1px solid #ddd;
-
-		.pull-right {
-			text-align: right;
-			padding: 5px 10px;
-		}
-
-		.row {
-			padding: 10px 10px 10px 20px;
-		}
-	}
-
 
 	.favourite, .follow {
 		cursor: pointer;
@@ -182,8 +145,11 @@
 		background: white !important;
 		color: #333;
 		&:hover {
-			background: @brand-primary !important;
+			background: $primary !important;
 		}
+	}
+	.necro-post {
+		margin-bottom: 1rem;
 	}
 }
 
@@ -197,11 +163,11 @@
 	&::after {
 		z-index: 0;
 		margin-left: -24px;
-		.transition(~"opacity 250ms ease, margin-left 250ms ease");
+		transition: "opacity 250ms ease, margin-left 250ms ease";
 	}
 
 	&.replying::after {
 		margin-left: 0px;
-		.animation(topic-reply-pulse 2s ease-in infinite);
+		animation: "topic-reply-pulse 2s ease-in infinite";
 	}
 }

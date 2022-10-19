@@ -11,12 +11,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,300,700,900,500');
 
-.box-shadow(@style) {
-  -webkit-box-shadow: @style;
-  -moz-box-shadow: @style;
-  box-shadow: @style
-}
-
 // ---- Typography
 
 body {
@@ -33,16 +27,16 @@ pre {
 
 h1 small, .h1 small {
   font-weight: 500;
-  color: lighten(@brand-primary, 10%);
+  color: lighten($primary, 10%);
 }
 
 // ---- Jumbotron
 
 .jumbotron {
   .btn-primary {
-    background-color: darken(@brand-primary, 7%);
+    background-color: darken($primary, 7%);
   }
-  
+
   p {
     font-weight: 300;
   }
@@ -55,23 +49,23 @@ h1 small, .h1 small {
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {
-  border-top: 2px solid @brand-primary;
+  border-top: 2px solid $primary;
 }
 
 // ---- Navbar
 
 .navbar {
-  .box-shadow(0px 1px 6px rgba(0,0,0,0.15));
+  box-shadow: 1px 6px rgba(0,0,0,0.15);
 }
 
 .navbar-static-top, .navbar-fixed-top {
-  // border-top: 2px solid @brand-primary;
-  .box-shadow(0px -3px 12px rgba(0,0,0,0.5));
+  // border-top: 2px solid $primary;
+  box-shadow: 0px -3px 12px rgba(0,0,0,0.5);
 }
 
 .navbar-fixed-bottom {
-  border-bottom: 2px solid @brand-primary;
-  .box-shadow(0px 3px 12px rgba(0,0,0,0.5));
+  border-bottom: 2px solid $primary;
+  box-shadow: 0px 3px 12px rgba(0,0,0,0.5);
 }
 
 // ---- Buttons
@@ -81,8 +75,8 @@ h1 small, .h1 small {
 }
 
 .btn-default:hover {
-  color: @gray;
-  background-color: lighten(@brand-primary, 40%);
+  color: $gray-500;
+  background-color: lighten($primary, 40%);
 }
 
 // ---- Labels
@@ -96,7 +90,7 @@ h1 small, .h1 small {
 .pagination > li > a {
   border-width: 0;
   border-bottom-width: 3px;
-  
+
   &:first-child {
     border-left-width: 0;
   }
@@ -107,27 +101,27 @@ h1 small, .h1 small {
 .panel {
   border-width: 0;
   border-top-width: 3px;
-  .box-shadow(0 1px 10px rgba(0,0,0,0.15));
+  box-shadow: 0 1px 10px rgba(0,0,0,0.15);
 }
 
 .panel-default {
-  border-top-color: @brand-primary;
+  border-top-color: $primary;
 }
 
 .panel-heading {
   background: transparent;
-  border-bottom-color: @gray-lighter;
+  border-bottom-color: $gray-800;
 }
 
 .panel-footer {
   background: transparent;
-  border-top-color: @gray-lighter;
+  border-top-color: $gray-800;
 }
 
 // ---- Progress Bars
 
 .progress {
-  .box-shadow(0 -1px 0px rgba(0,0,0,0.1) inset);
+  box-shadow: 0 -1px 0px rgba(0,0,0,0.1) inset;
 }
 
 // ---- Well

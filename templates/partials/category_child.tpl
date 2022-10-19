@@ -1,28 +1,24 @@
 <!-- IF ../isSection -->
-<div component="categories/category" class="col-xs-12 category-item">
+<div component="categories/category" class="col-12 category-item">
 	<h1 class="section">{../name}</h1>
 </div>
 <!-- ELSE -->
-<div component="categories/category" class="<!-- IF ../class -->{../class}<!-- ELSE -->col-md-3 col-sm-6 col-xs-12<!-- ENDIF ../class --> category-item" data-cid="{../cid}" data-numRecentReplies="{../numRecentReplies}">
+<div component="categories/category" class="<!-- IF ../class -->{../class}<!-- ELSE -->col-md-3 col-sm-6 col-12<!-- ENDIF ../class --> category-item" data-cid="{../cid}" data-numRecentReplies="{../numRecentReplies}">
 	<meta itemprop="name" content="{../name}">
 
 	<div class="category-icon">
-		<!-- IF ../link -->
-		<a style="color: {../color};" href="{../link}" itemprop="url">
-		<!-- ELSE -->
-		<a style="color: {../color};" href="{config.relative_path}/category/{../slug}" itemprop="url">
-		<!-- ENDIF ../link -->
+		<a style="color: {./color};" href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
 			<div
-				id="category-{../cid}" class="category-header category-header-image-{../imageClass}"
+				id="category-{../cid}" class="position-relative category-header category-header-image-{../imageClass}"
 				style="
 					<!-- IF ../backgroundImage -->background-image: url({../backgroundImage});<!-- ENDIF ../backgroundImage -->
 					<!-- IF ../bgColor -->background-color: {../bgColor};<!-- ENDIF ../bgColor -->
 					color: {../color};
 				"
 			>
-				<!-- IF !../link -->
-				<span class="badge {../unread-class}"><i class="fa fa-book" data-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{../totalTopicCount}">{../totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{../totalPostCount}">{../totalPostCount}</span></span>
-				<!-- ENDIF !../link -->
+				{{{ if !./link }}}
+				<span class="badge {../unread-class}"><i class="fa fa-book" data-bs-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{../totalTopicCount}">{../totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-bs-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{../totalPostCount}">{../totalPostCount}</span></span>
+				{{{ end }}}
 
 				<!-- IF ../icon -->
 				<div><i class="fa {../icon} fa-4x"></i></div>
@@ -32,30 +28,21 @@
 
 		<div class="category-box">
 			<div class="category-info">
-				<!-- IF ../link -->
-				<a href="{../link}" itemprop="url">
-				<!-- ELSE -->
-				<a href="{config.relative_path}/category/{../slug}" itemprop="url">
-				<!-- ENDIF ../link -->
-					<h4><!-- IF ../icon --><i class="fa {../icon} visible-xs-inline"></i> <!-- ENDIF ../icon -->{../name}</h4>
+				<a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
+					<h4 class="text-truncate"><!-- IF ../icon --><i class="fa {../icon} visible-xs-inline"></i> <!-- ENDIF ../icon -->{../name}</h4>
 				</a>
-				<div class="description" itemprop="description">{../descriptionParsed}</div>
+				<div class="description ms-0" itemprop="description">{../descriptionParsed}</div>
 			</div>
 
-			<!-- IF !../link -->
-			{{{ each posts }}}
+			{{{ if !./link }}}
+			{{{ each ./posts }}}
 			<div component="category/posts" class="post-preview clearfix">
 				<strong><a href="{config.relative_path}/topic/{../topic.slug}">{../topic.title}</a></strong>
 				<hr/>
-				<a style="color: {../color};" href="<!-- IF ../user.userslug -->{config.relative_path}/user/{../user.userslug}<!-- ELSE -->#<!-- ENDIF ../user.userslug -->">
-					<!-- IF ../user.picture -->
-					<img src="{../user.picture}" title="{../user.username}" class="pull-left user-img" />
-					<!-- ELSE -->
-					<div class="pull-left user-img user-icon" title="{../user.username}" style="background-color: {../user.icon:bgColor}">{../user.icon:text}</div>
-					<!-- ENDIF ../user.picture -->
+				<a class="float-start me-2" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
+					{buildAvatar(./user, "24px", true)}
 				</a>
 				<div class="post-preview-content">
-
 					<div class="content">
 					{../content}
 					</div>
@@ -68,7 +55,7 @@
 				</span>
 			</div>
 			{{{ end }}}
-			<!-- ENDIF !../link -->
+			{{{ end }}}
 		</div>
 	</div>
 </div>
