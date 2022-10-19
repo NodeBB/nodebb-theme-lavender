@@ -1,4 +1,6 @@
 $('document').ready(function() {
+	setupTaskbar();
+
 	require([
 		'masonry-layout',
 		'imagesloaded',
@@ -88,7 +90,7 @@ $('document').ready(function() {
 		}
 
 		function setupResizer() {
-			var div = $('<div class="overlay-container"><div class="panel resizer pointer"><div class="panel-body"><i class="fa fa-arrows-h fa-2x"></i></div></div></div>');
+			var div = $('<div class="overlay-container"><div class="card resizer pointer"><div class="card-body"><i class="fa fa-arrows-h fa-2x"></i></div></div></div>');
 
 			div.css({
 				position:'fixed',
@@ -139,4 +141,60 @@ $('document').ready(function() {
 			$('.navbar-header button').click();
 		}
 	});
+
+	function setupTaskbar() {
+		require(['hooks'], (hooks) => {
+			hooks.on('filter:taskbar.push', (data) => {
+				data.options.className = 'taskbar-' + data.module;
+				if (data.module === 'composer') {
+					data.options.icon = 'fa-commenting-o';
+				} else if (data.module === 'chat') {
+					if (data.element.length && !data.element.hasClass('active')) {
+						increaseChatCount(data.element);
+					}
+				}
+			});
+			hooks.on('action:taskbar.pushed', (data) => {
+				if (data.module === 'chat') {
+					createChatIcon(data);
+					var elData = data.element.data();
+					if (elData && elData.options && !elData.options.isSelf) {
+						increaseChatCount(data.element);
+					}
+				}
+			});
+		});
+
+		socket.on('event:chats.markedAsRead', function (data) {
+			$('#taskbar [data-roomid="' + data.roomId + '"]')
+				.removeClass('new')
+				.attr('data-content', 0);
+		});
+
+		function createChatIcon(data) {
+			$.getJSON(config.relative_path + '/api/user/' + app.user.userslug + '/chats/' + data.options.roomId, function (chatObj) {
+				var el = $('#taskbar [data-uuid="' + data.uuid + '"] a');
+				el.parent('[data-uuid]').attr('data-roomId', data.options.roomId);
+
+				if (chatObj.users.length === 1) {
+					var user = chatObj.users[0];
+					el.find('i').remove();
+
+					if (user.picture) {
+						el.css('background-image', 'url(' + user.picture + ')');
+						el.css('background-size', 'cover');
+					} else {
+						el.css('background-color', user['icon:bgColor'])
+							.text(user['icon:text'])
+							.addClass('avatar');
+					}
+				}
+			});
+		}
+
+		function increaseChatCount(el) {
+			var count = (parseInt($(el).attr('data-content'), 10) || 0) + 1;
+			$(el).attr('data-content', count);
+		}
+	}
 });
