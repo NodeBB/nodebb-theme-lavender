@@ -47,15 +47,10 @@
 			<div component="category/posts" class="post-preview clearfix">
 				<strong><a href="{config.relative_path}/topic/{../topic.slug}">{../topic.title}</a></strong>
 				<hr/>
-				<a style="color: {../color};" href="<!-- IF ../user.userslug -->{config.relative_path}/user/{../user.userslug}<!-- ELSE -->#<!-- ENDIF ../user.userslug -->">
-					<!-- IF ../user.picture -->
-					<img src="{../user.picture}" title="{../user.username}" class="pull-left user-img" />
-					<!-- ELSE -->
-					<div class="pull-left user-img user-icon" title="{../user.username}" style="background-color: {../user.icon:bgColor}">{../user.icon:text}</div>
-					<!-- ENDIF ../user.picture -->
+				<a class="float-start me-2" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
+					{buildAvatar(./user, "24px", true)}
 				</a>
 				<div class="post-preview-content">
-
 					<div class="content">
 					{../content}
 					</div>

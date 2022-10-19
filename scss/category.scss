@@ -158,19 +158,6 @@
 			border-bottom: none;
 		}
 
-		img {
-			display: block;
-			max-width: 100%;
-			height: auto;
-		}
-
-		.user-img {
-			width: 24px;
-			height: 24px;
-			margin-right: 5px;
-			border-radius: 50%;
- 		}
-
  		hr {
 			margin-bottom: 10px;
 			margin-top: 5px;
@@ -180,6 +167,12 @@
 			max-height: 250px;
 			overflow: hidden;
 			position: relative;
+
+			img {
+				display: block;
+				max-width: 100%;
+				height: auto;
+			}
 
 			p {
 				font-size:14px;
