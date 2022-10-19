@@ -15,7 +15,8 @@
   ],
   "dependencies": {
     "imagesloaded": "4.1.4",
-    "masonry-layout": "4.2.2"
+    "masonry-layout": "4.2.2",
+    "pulling": "^2.0.0"
   },
   "author": {
     "name": "psychobunny",
