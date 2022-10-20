@@ -22,7 +22,7 @@
 							<div class="topic-body">
 								<div class="row">
 									<div class="col-md-12">
-										<div class="topic-profile-pic hidden-xs text-center d-flex flex-column">
+										<div class="topic-profile-pic hidden-xs text-center d-flex flex-column sticky-top" style="top: 6rem; z-index: 1;">
 											<div>
 												<a class="img-thumbnail rounded-circle d-block" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 													{buildAvatar(./user, "70px", false, "", "user/picture")}
