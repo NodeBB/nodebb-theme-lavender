@@ -1,19 +1,19 @@
-<ul component="category" class="topic-list list-unstyled" id="topics-container" data-nextstart="{nextStart}">
+<ul component="category" class="topic-list list-unstyled" id="topics-container">
 	<meta itemprop="itemListOrder" content="descending">
 	{{{ each topics }}}
-	<li component="category/topic" class="category-item card card-body p-0 border-top-0 border-bottom-0 border-end-0 {function.generateTopicClass}"  itemprop="itemListElement" <!-- IMPORT partials/data/category.tpl -->>
-		<a id="{../index}" data-index="{../index}" component="topic/anchor"></a>
+	<li component="category/topic" class="category-item card card-body px-2 py-0 border-top-0 border-bottom-0 border-end-0 {function.generateTopicClass}"  itemprop="itemListElement" <!-- IMPORT partials/data/category.tpl -->>
+		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
 		<meta itemprop="name" content="{function.stripTags, title}">
 
-		<div class="category-body">
+		<div class="p-2 mb-0">
 			<div class="row">
 				<div class="col-md-7 col-sm-8">
-					<!-- IF showSelect -->
-					<i class="fa fa-fw fa-square-o pull-left pointer" component="topic/select"></i>
-					<!-- ENDIF showSelect -->
+					{{{ if showSelect }}}
+					<i class="fa fa-fw fa-square-o float-start pointer" component="topic/select"></i>
+					{{{ end }}}
 
-					<div class="category-profile-pic">
-						<a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">
+					<div class="float-start profile-pic mx-3">
+						<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 							<!-- IF topics.thumb -->
 							<img src="{topics.thumb}" class="user-img" title="{topics.user.username}" />
 							<!-- ELSE -->
@@ -21,14 +21,19 @@
 							<!-- ENDIF topics.thumb -->
 						</a>
 					</div>
-					<div class="category-text">
+					<div class="overflow-hidden">
 						<div>
-							<strong><i component="topic/pinned" class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i component="topic/locked" class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
-							<!-- IF !topics.noAnchor -->
-							<a class="fs-4" component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url" class="topic-title">{topics.title}</a><br />
-							<!-- ELSE -->
-							<a class="fs-4" component="topic/header" itemprop="url" class="topic-title">{topics.title}</a><br />
-							<!-- ENDIF !topics.noAnchor -->
+							<i component="topic/scheduled" class="fa fa-clock-o {{{ if !topics.scheduled }}}hide{{{ end }}}" title="[[topic:scheduled]]"></i>
+							<i component="topic/pinned" class="fa fa-thumb-tack {{{ if (topics.scheduled || !topics.pinned) }}}hide{{{ end }}}" title="{{{ if !../pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {../pinExpiryISO}]]{{{ end }}}"></i>
+							<i component="topic/locked" class="fa fa-lock {{{ if !topics.locked }}}hide{{{ end }}}" title="[[topic:locked]]"></i>
+							<i component="topic/moved" class="fa fa-arrow-circle-right {{{ if !topics.oldCid }}}hide{{{ end }}}" title="[[topic:moved]]"></i>
+							{{{each topics.icons}}}{@value}{{{end}}}
+
+							{{{ if topics.noAnchor }}}
+							<span class="fs-4 topic-title" component="topic/header">{topics.title}</span><br />
+							{{{ else }}}
+							<a class="fs-4 topic-title" component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">{topics.title}</a><br />
+							{{{ end }}}
 
 							<div class="d-inline-block mb-1">
 								{buildCategoryIcon(./category, "24px", "rounded-circle")}

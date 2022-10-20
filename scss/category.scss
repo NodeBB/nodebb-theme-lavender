@@ -1,22 +1,3 @@
-.category {
-	.category-body {
-		padding: 10px;
-		padding-bottom:  5px;
-		margin-bottom: 0;
-	}
-
-	.category-profile-pic {
-		float: left;
-		margin-left: 15px;
-		margin-right: 15px;
-	}
-
-	.category-text {
-		color: #666;
-		overflow: hidden;
-	}
-}
-
 .topic-list {
 	.category-item {
 		-webkit-box-shadow: inset 0px 0px 2px 2px #ffffff;
@@ -27,78 +8,23 @@
 			border-left: 2px solid $primary;
 			margin-left: -2px;
 		}
-
-		> h1.section {
-			font-size: 32px;
-			font-weight: 400;
-		}
-	}
-}
-
-.subcategories {
-	margin: 0;
-
-	.category-item {
-		margin-bottom: 20px;
-		box-shadow: none;
 	}
 }
 
 .category-item {
-	padding-left: 8px !important;
-	padding-right: 8px !important;
-
 	[component="topic/select"] {
-		line-height:55px;
+		line-height: 55px;
 	}
-
-	.category-icon {
-		-webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
-		-moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
-		box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
-	}
-
-	.category-header {
-		text-align: center;
-		padding: 30px;
-		min-height:115px;
-
-
-		.badge {
-			background: none;
-			position: absolute;
-			top: 90px;
-			right: 10px;
-			span, i {
-				opacity: 0.8;
-			}
-		}
-	}
-
+	$box-header-bg: mix($black, $card-bg, 3%);
 	.category-box {
-		position: relative;
-		background: $card-bg;
-
-		min-height: 30px;
 		margin-top: -10px;
 
 		.category-info {
-			background: $card-cap-bg;
-			padding:10px;
-			border-bottom: 1px solid darken($card-cap-bg, 10%);
-
-			h4 {
-				font-weight: bold;
-				margin-top: 0px;
-				margin-bottom: 5px;
-			}
-		}
-
-		.post-preview {
-			padding:10px;
+			background: $box-header-bg;
+			border-bottom: 1px solid darken($box-header-bg, 10%);
 		}
 	}
-
+	// arrow inside category box
 	.category-box:after, .category-box:before {
 		bottom: 100%;
 		left: 10%;
@@ -111,48 +37,28 @@
 	}
 	.category-box:after {
 		border-color: rgba(140, 113, 242, 0);
-		border-bottom-color: $card-cap-bg;
+		border-bottom-color: $box-header-bg;
 		border-width: 10px;
 		margin-left: -10px;
 	}
 	.category-box:before {
 		border-color: rgba(122, 98, 211, 0);
-
 		border-width: 12px;
 		margin-left: -12px;
 	}
 
 	.post-preview {
-		padding-top: 10px;
-		border-bottom: 1px dashed #dedede;
-		word-break: break-word;
-
+		border-bottom: 1px dashed $border-color;
 		&:last-child {
 			border-bottom: none;
 		}
 
- 		hr {
-			margin-bottom: 10px;
-			margin-top: 5px;
-		}
-
 		.post-preview-content {
 			max-height: 250px;
-			overflow: hidden;
-			position: relative;
-
 			img {
 				display: block;
 				max-width: 100%;
 				height: auto;
-			}
-
-			p {
-				font-size:14px;
-			}
-
-			blockquote {
-				border-left-width: 3px;
 			}
 		}
 	}

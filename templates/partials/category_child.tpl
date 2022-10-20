@@ -6,17 +6,17 @@
 <div component="categories/category" class="{{{ if ./class }}}{./class}{{{ else }}}col-md-3 col-sm-6 col-12{{{ end }}} category-item mb-3" data-cid="{./cid}" data-numRecentReplies="{./numRecentReplies}">
 	<meta itemprop="name" content="{./name}">
 
-	<div class="category-icon">
+	<div class="category-icon shadow-xs">
 		<a style="color: {./color};" href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
 			<div
 				id="category-{./cid}"
-				class="position-relative category-header category-header-image-{./imageClass}"
+				class="position-relative text-center p-4 category-header category-header-image-{./imageClass}"
 				style="
 					{{{ if ./backgroundImage }}}background-image: url({./backgroundImage});{{{ end }}}
 					{{{ if ./bgColor }}}background-color: {./bgColor};{{{ end }}}
 					color: {./color};">
 				{{{ if !./link }}}
-				<span style="color: {./color};" class="badge {./unread-class}"><i class="fa fa-book" data-bs-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{./totalTopicCount}">{./totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-bs-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{./totalPostCount}">{./totalPostCount}</span></span>
+				<span style="color: {./color}; top: 90px; right: 10px;" class="position-absolute opacity-75 badge {./unread-class}"><i class="fa fa-book" data-bs-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{./totalTopicCount}">{./totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-bs-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{./totalPostCount}">{./totalPostCount}</span></span>
 				{{{ end }}}
 
 				{{{ if ./icon }}}
@@ -25,10 +25,10 @@
 			</div>
 		</a>
 
-		<div class="category-box">
-			<div class="category-info">
+		<div class="category-box position-relative card border-0 p-0">
+			<div class="category-info p-2">
 				<a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
-					<h4 class="text-truncate">{{{ if ./icon }}}<i class="fa {./icon} visible-xs-inline"></i> {{{ end }}}{./name}</h4>
+					<h4 class="text-truncate fw-bold mt-0 mb-2">{{{ if ./icon }}}<i class="fa {./icon} visible-xs-inline"></i> {{{ end }}}{./name}</h4>
 				</a>
 				<div class="description ms-0 mb-1" itemprop="description">{./descriptionParsed}</div>
 				<!-- subcategories -->
@@ -43,20 +43,21 @@
 
 			{{{ if !./link }}}
 			{{{ each ./posts }}}
-			<div component="category/posts" class="post-preview clearfix">
+			<div component="category/posts" class="post-preview p-2 text-break">
 				<strong><a href="{config.relative_path}/topic/{./topic.slug}">{./topic.title}</a></strong>
-				<hr/>
-				<a class="float-start me-2" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
-					{buildAvatar(./user, "24px", true)}
-				</a>
-				<div class="post-preview-content">
-					<div class="content">
-					{./content}
+				<hr class="mb-2 mt-1" />
+				<div class="d-flex gap-1">
+					<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
+						{buildAvatar(./user, "24px", true)}
+					</a>
+					<div class="post-preview-content overflow-hidden">
+						<div class="content">
+						{./content}
+						</div>
+						<p class="fade-out"></p>
 					</div>
-					<p class="fade-out"></p>
 				</div>
-
-				<span class="pull-right post-preview-footer">
+				<span class="pull-right post-preview-footer overflow-hidden position-relative opacity-75 mt-2 small">
 					<span class="timeago" title="{./timestampISO}"></span> &bull;
 					<a href="{config.relative_path}/topic/{./topic.slug}{{{ if ./index }}}/{./index}{{{ end }}}">[[global:read_more]]</a>
 				</span>
