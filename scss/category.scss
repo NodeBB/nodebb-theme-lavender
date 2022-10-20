@@ -1,31 +1,4 @@
 .category {
-	ul {
-		li {
-			padding-bottom: 0;
-		}
-	}
-
-	.category-stat {
-		text-align: center;
-
-		strong {
-			font-size: 25px;
-		}
-
-		small {
-			color: #aaa;
-		}
-
-		&.replies {
-			line-height: 10px;
-			padding-top: 8px;
-			.no-replies {
-				padding-top: 13px;
-				line-height: 15px;
-			}
-		}
-	}
-
 	.category-body {
 		padding: 10px;
 		padding-bottom:  5px;

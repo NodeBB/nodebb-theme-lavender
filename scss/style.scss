@@ -1,7 +1,6 @@
 @import "whiteplum";
 @import "keyframes";
 
-@import "categories";
 @import "category";
 @import "topic";
 
@@ -20,73 +19,10 @@
  	transition: width 0.2s ease-in;
 }
 
-.admin {
-	background: white;
-
-	.panel[data-widget] {
-		border-top: 0;
-		box-shadow: 0px 0px 1px #555;
-	}
-}
-
-.header {
-	#user_label {
-		>a {
-			padding-top:13px;
-			padding-bottom:13px;
-		}
-
-		img, .user-icon {
-			width:24px;
-			height:24px;
-			border-radius: 50%;
-		}
-	}
-
-	#notif-list, #chat-list {
-		li {
-			&.unread {
-				background-color: $warning;
-			}
-		}
-	}
-}
-
-.chats-list {
-	li {
-		&.unread {
-			background-color: $warning;
-		}
-	}
-}
-
 .header-topic-title {
 	padding-top:5px;
 	span {
 		height:25px;
-	}
-}
-
-.breadcrumb {
-	background-color: white;
-}
-
-.account {
-	.user-profile-picture {
-		border-radius: 50%;
-	}
-}
-
-.taskbar {
-	li > a {
-		padding-top:10px;
-		padding-bottom:10px;
-	}
-}
-
-.composer {
-	.instructions {
-		line-height: 25px;
 	}
 }
 
