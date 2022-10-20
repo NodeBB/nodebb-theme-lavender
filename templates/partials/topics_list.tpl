@@ -1,7 +1,7 @@
 <ul component="category" class="topic-list list-unstyled" id="topics-container" data-nextstart="{nextStart}">
 	<meta itemprop="itemListOrder" content="descending">
 	{{{ each topics }}}
-	<li component="category/topic" class="category-item {function.generateTopicClass}" itemprop="itemListElement" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="category-item card card-body p-0 border-top-0 border-bottom-0 border-end-0 {function.generateTopicClass}"  itemprop="itemListElement" <!-- IMPORT partials/data/category.tpl -->>
 		<a id="{../index}" data-index="{../index}" component="topic/anchor"></a>
 		<meta itemprop="name" content="{function.stripTags, title}">
 
@@ -53,33 +53,32 @@
 					</div>
 				</div>
 
-				<div class="col-1 category-stat hidden-xs stats-votes">
-					<strong class="human-readable-number" title="{topics.votes}">{topics.votes}</strong><br />
-					<small>[[global:votes]]</small>
+				<div class="col-1 text-center category-stat hidden-xs stats-votes">
+					<strong class="human-readable-number fs-3" title="{topics.votes}">{topics.votes}</strong><br />
+					<small class="text-muted">[[global:votes]]</small>
 				</div>
 
-				<div class="col-1 category-stat hidden-xs stats-postcount">
-					<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong><br />
-					<small>[[global:posts]]</small>
+				<div class="col-1 text-center category-stat hidden-xs stats-postcount">
+					<strong class="human-readable-number fs-3" title="{topics.postcount}">{topics.postcount}</strong><br />
+					<small class="text-muted">[[global:posts]]</small>
 				</div>
 
-				<div class="col-1 category-stat hidden-xs stats-viewcount">
-					<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong><br />
-					<small>[[global:views]]</small>
+				<div class="col-1 text-center category-stat hidden-xs stats-viewcount">
+					<strong class="human-readable-number fs-3" title="{topics.viewcount}">{topics.viewcount}</strong><br />
+					<small class="text-muted">[[global:views]]</small>
 				</div>
 
-				<div class="col-2 category-stat replies hidden-sm hidden-xs" component="topic/teaser">
-					<!-- IF topics.unreplied -->
+				<div class="col-2 category-stat replies hidden-sm hidden-xs d-flex align-items-center" component="topic/teaser">
+					{{{ if topics.unreplied }}}
 					<p class="no-replies"><a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">[[category:no_replies]]</a></p>
-					<!-- ELSE -->
-					<a href="<!-- IF topics.teaser.user.userslug -->{config.relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
+					{{{ else }}}
+					<a class="me-2" href="{{{ if ./teaser.user.userslug }}}{config.relative_path}/user/{./teaser.user.userslug}{{{ else }}}#{{{ end }}}">
 						{buildAvatar(./teaser.user, "24px", true)}
 					</a>
 					<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
 						<span class="timeago" title="{topics.teaser.timestampISO}"></span>
 					</a>
-
-					<!-- ENDIF topics.unreplied -->
+					{{{ end }}}
 				</div>
 			</div>
 		</div>
