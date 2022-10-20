@@ -52,7 +52,7 @@
 		<!-- IMPORT partials/topics_list.tpl -->
 
 		{{{ if config.usePagination }}}
-			<!-- IMPORT partials/paginator.tpl -->
+		<!-- IMPORT partials/paginator.tpl -->
 		{{{ end }}}
 	</div>
 
