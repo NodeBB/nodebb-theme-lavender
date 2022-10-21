@@ -22,6 +22,9 @@
 		"static/lib/lavender.js"
 	],
 	"modules": {
-		"../admin/plugins/lavender.js": "static/lib/admin.js"
+		"../admin/plugins/lavender.js": "static/lib/admin.js",
+		"persona/quickreply.js": "../nodebb-theme-persona/public/modules/quickreply.js",
+		"persona/taskbar.js": "../nodebb-theme-persona/public/modules/taskbar.js",
+		"persona/mobile-menu.js": "../nodebb-theme-persona/public/modules/mobile-menu.js"
 	}
 }
