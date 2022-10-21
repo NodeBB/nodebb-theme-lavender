@@ -1,23 +1,20 @@
 <div class="row">
-	<div class="col-lg-9">
-		<div class="card">
-			<div class="card-header">Lavender Theme Settings</div>
-			<div class="card-body">
-				<div class="form-check">
-					<label class="form-check-label">Disable Masonry</label>
-					<input class="form-check-input" id="disableMasonry" type="checkbox" data-field="disableMasonry" />
-				</div>
+	<div class="col-sm-2 col-12 settings-header">Theme Settings</div>
+	<div class="col-sm-10 col-12">
+		<form role="form" class="lavender-settings">
+			<div class="form-check">
+				<label class="form-check-label">Disable Masonry</label>
+				<input class="form-check-input" id="disableMasonry" type="checkbox" name="disableMasonry" />
 			</div>
-		</div>
-	</div>
 
-	<div class="col-lg-3 acp-sidebar">
-		<div class="card">
-			<div class="card-header">Save Settings</div>
-			<div class="card-body d-grid gap-1">
-				<button class="btn btn-primary" id="save">Save Changes</button>
-				<button class="btn btn-warning" id="revert">Revert Changes</button>
+			<div class="form-check">
+				<label class="form-check-label">Enable quick reply</label>
+				<input class="form-check-input" id="enableQuickReply" type="checkbox" name="enableQuickReply" />
 			</div>
-		</div>
+		</form>
 	</div>
 </div>
+
+<button id="save" class="floating-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+    <i class="material-icons">save</i>
+</button>

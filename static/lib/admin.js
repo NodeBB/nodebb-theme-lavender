@@ -1,11 +1,15 @@
 
 'use strict';
 
-define('admin/plugins/lavender', ['admin/settings'], function (Settings) {
+define('admin/plugins/lavender', ['settings'], function (Settings) {
 	const ACP = {};
 
 	ACP.init = function () {
-		Settings.prepare();
+		Settings.load('lavender', $('.lavender-settings'));
+
+		$('#save').on('click', function () {
+			Settings.save('lavender', $('.lavender-settings'));
+		});
 	};
 
 	return ACP;

@@ -18,6 +18,10 @@
 			<!-- IMPORT partials/post_bar.tpl -->
 		</div>
 
+		{{{ if config.enableQuickReply }}}
+		<!-- IMPORT partials/topic/quickreply.tpl -->
+		{{{ end }}}
+
 		{{{ if config.usePagination }}}
 		<!-- IMPORT partials/paginator.tpl -->
 		{{{ end }}}
