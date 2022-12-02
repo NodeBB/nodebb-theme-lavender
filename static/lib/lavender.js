@@ -1,7 +1,6 @@
 $('document').ready(function() {
 	setupTaskbar();
 	setupMobileMenu();
-	setupQuickReply();
 
 	require([
 		'masonry-layout',
@@ -132,20 +131,6 @@ $('document').ready(function() {
 	function setupMobileMenu() {
 		require(['persona/mobile-menu'], function (mobileMenu) {
 			mobileMenu.init();
-		});
-	}
-
-	function setupQuickReply() {
-		$(window).on('action:ajaxify.end', function (ev, data) {
-			if (data.url && data.url.match('^topic/')) {
-				if (config.enableQuickReply) {
-					require(['persona/quickreply'], function (quickreply) {
-						if (quickreply) {
-							quickreply.init();
-						}
-					});
-				}
-			}
 		});
 	}
 });
