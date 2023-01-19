@@ -10,7 +10,7 @@
 
 		<div class="subcategories mb-2">
 			{{{ if hasMoreSubCategories }}}
-			<div class="mb-2"><!-- IMPORT partials/category-selector.tpl --></div>
+			<div class="mb-2"><!-- IMPORT partials/category/selector-dropdown-left.tpl --></div>
 			{{{ end }}}
 			<div class="row" component="category/subcategory/container">
 				{{{each children}}}
