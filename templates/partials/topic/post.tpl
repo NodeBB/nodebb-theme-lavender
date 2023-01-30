@@ -1,5 +1,5 @@
 <li component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
-	<a component="post/anchor" data-index="{posts.index}" name="{posts.index}"></a>
+	<a component="post/anchor" data-index="{./index}" id="{increment(./index, "1")}"></a>
 	<div class="post-row">
 
 		<meta itemprop="datePublished" content="{posts.timestampISO}">
