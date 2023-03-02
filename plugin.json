@@ -6,8 +6,7 @@
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "static:app.preload", "method": "preinit" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
-		{ "hook": "filter:config.get", "method": "getConfig" },
-		{ "hook": "filter:topic.build", "method": "filterTopicBuild" }
+		{ "hook": "filter:config.get", "method": "getConfig" }
 	],
 	"scripts": [
 		"static/lib/lavender.js"
