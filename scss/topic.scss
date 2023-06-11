@@ -19,6 +19,7 @@
 		padding-top: 5px;
 		display: inline-block;
 		font-style: italic;
+		margin-left: 0px;
 	}
 
 	.topic-item {
@@ -54,6 +55,20 @@
 						ul > li {
 							list-style-type: square;
 						}
+					}
+				}
+			}
+
+			> blockquote {
+				> blockquote {
+					> *:not(.blockquote) {
+						display: none;
+					}
+				}
+
+				> blockquote.uncollapsed {
+					> *:not(.blockquote) {
+						display: block;
 					}
 				}
 			}
