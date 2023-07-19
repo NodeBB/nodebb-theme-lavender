@@ -59,17 +59,17 @@
 				</div>
 
 				<div class="col-1 text-center category-stat hidden-xs stats-votes">
-					<strong class="human-readable-number fs-3" title="{topics.votes}">{topics.votes}</strong><br />
+					<strong class="fs-3" title="{topics.votes}">{humanReadableNumber(topics.votes)}</strong><br />
 					<small class="text-muted">[[global:votes]]</small>
 				</div>
 
 				<div class="col-1 text-center category-stat hidden-xs stats-postcount">
-					<strong class="human-readable-number fs-3" title="{topics.postcount}">{topics.postcount}</strong><br />
+					<strong class="fs-3" title="{topics.postcount}">{humanReadableNumber(topics.postcount)}</strong><br />
 					<small class="text-muted">[[global:posts]]</small>
 				</div>
 
 				<div class="col-1 text-center category-stat hidden-xs stats-viewcount">
-					<strong class="human-readable-number fs-3" title="{topics.viewcount}">{topics.viewcount}</strong><br />
+					<strong class="fs-3" title="{topics.viewcount}">{humanReadableNumber(topics.viewcount)}</strong><br />
 					<small class="text-muted">[[global:views]]</small>
 				</div>
 

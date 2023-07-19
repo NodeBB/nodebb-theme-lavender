@@ -16,7 +16,7 @@
 					{{{ if ./bgColor }}}background-color: {./bgColor};{{{ end }}}
 					color: {./color};">
 				{{{ if !./link }}}
-				<span style="color: {./color}; top: 90px; right: 10px;" class="position-absolute opacity-75 badge {./unread-class}"><i class="fa fa-book" data-bs-toggle="tooltip" title="[[global:topics]]"></i> <span class="human-readable-number" title="{./totalTopicCount}">{./totalTopicCount}</span>&nbsp; <i class="fa fa-pencil" data-bs-toggle="tooltip" title="[[global:posts]]"></i> <span class="human-readable-number" title="{./totalPostCount}">{./totalPostCount}</span></span>
+				<span style="color: {./color}; top: 90px; right: 10px;" class="position-absolute opacity-75 badge {./unread-class}"><i class="fa fa-book" data-bs-toggle="tooltip" title="[[global:topics]]"></i> <span title="{./totalTopicCount}">{humanReadableNumber(./totalTopicCount)}</span>&nbsp; <i class="fa fa-pencil" data-bs-toggle="tooltip" title="[[global:posts]]"></i> <span title="{./totalPostCount}">{humanReadableNumber(./totalPostCount)}</span></span>
 				{{{ end }}}
 
 				{{{ if ./icon }}}
