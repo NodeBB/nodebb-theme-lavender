@@ -6,7 +6,7 @@
 </div>
 <div class="row">
 	<div class="topic {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
-		<div component="topic/deleted/message" class="alert alert-warning{{{ if !deleted }}} hidden{{{ end }}}">[[topic:deleted_message]]</div>
+		<div component="topic/deleted/message" class="alert alert-warning{{{ if !deleted }}} hidden{{{ end }}}">[[topic:deleted-message]]</div>
 
 		<ul component="topic" id="post-container" class="posts" data-tid="{tid}">
 			{{{ each posts }}}

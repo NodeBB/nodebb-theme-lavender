@@ -59,7 +59,7 @@
 				</div>
 				<span class="pull-right post-preview-footer overflow-hidden position-relative opacity-75 mt-2 small">
 					<span class="timeago" title="{./timestampISO}"></span> &bull;
-					<a href="{config.relative_path}/topic/{./topic.slug}{{{ if ./index }}}/{./index}{{{ end }}}">[[global:read_more]]</a>
+					<a href="{config.relative_path}/topic/{./topic.slug}{{{ if ./index }}}/{./index}{{{ end }}}">[[global:read-more]]</a>
 				</span>
 			</div>
 			{{{ end }}}

@@ -75,7 +75,7 @@
 
 				<div class="col-2 category-stat replies hidden-sm hidden-xs d-flex align-items-center" component="topic/teaser">
 					{{{ if topics.unreplied }}}
-					<p class="no-replies"><a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">[[category:no_replies]]</a></p>
+					<p class="no-replies"><a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">[[category:no-replies]]</a></p>
 					{{{ else }}}
 					<a class="me-2" href="{{{ if ./teaser.user.userslug }}}{config.relative_path}/user/{./teaser.user.userslug}{{{ else }}}#{{{ end }}}">
 						{buildAvatar(./teaser.user, "24px", true)}
