@@ -106,7 +106,7 @@
 						</span>
 
 
-						<span component="post/editor" class="<!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">, [[global:last-edited-by, {posts.editor.username}]] <span class="timeago" title="{posts.editedISO}"></span></span>
+						<span component="post/editor" class="<!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">, [[global:last-edited-by, {posts.editor.username}]] <span class="timeago" title="{isoTimeToLocaleString(posts.editedISO, config.userLang)}"></span></span>
 
 					</small>
 				</div>
