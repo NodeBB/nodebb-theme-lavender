@@ -15,13 +15,13 @@
 	[component="topic/select"] {
 		line-height: 55px;
 	}
-	$box-header-bg: mix($black, $card-bg, 3%);
+
 	.category-box {
 		margin-top: -10px;
 
 		.category-info {
-			background: $box-header-bg;
-			border-bottom: 1px solid darken($box-header-bg, 10%);
+			background: $card-cap-bg;
+			border-bottom: 1px solid $card-cap-bg;
 		}
 	}
 	// arrow inside category box
@@ -37,7 +37,7 @@
 	}
 	.category-box:after {
 		border-color: rgba(140, 113, 242, 0);
-		border-bottom-color: $box-header-bg;
+		border-bottom-color: $card-cap-bg;
 		border-width: 10px;
 		margin-left: -10px;
 	}
