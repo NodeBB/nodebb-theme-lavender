@@ -53,7 +53,7 @@
 				<div>
 
 					<div class="dropdown moderator-tools" component="post/tools">
-						<a href="#" data-bs-toggle="dropdown"><i class="fa fa-fw fa-gear"></i></a>
+						<a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-gear"></i></a>
 						<ul class="dropdown-menu" role="menu"></ul>
 					</div>
 
