@@ -9,7 +9,8 @@
 		{ "hook": "filter:config.get", "method": "getConfig" }
 	],
 	"scripts": [
-		"static/lib/lavender.js"
+		"static/lib/lavender.js",
+		"../nodebb-theme-persona/public/persona.js"
 	],
 	"modules": {
 		"../admin/plugins/lavender.js": "static/lib/admin.js",

@@ -1,7 +1,4 @@
 $('document').ready(function() {
-	setupTaskbar();
-	setupMobileMenu();
-
 	require([
 		'masonry-layout',
 		'imagesloaded',
@@ -121,16 +118,4 @@ $('document').ready(function() {
 			$('.navbar-header button').click();
 		}
 	});
-
-	function setupTaskbar() {
-		require(['persona/taskbar'], function (taskbar) {
-			taskbar.init();
-		});
-	}
-
-	function setupMobileMenu() {
-		require(['persona/mobile-menu'], function (mobileMenu) {
-			mobileMenu.init();
-		});
-	}
 });
