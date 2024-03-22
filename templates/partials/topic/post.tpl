@@ -9,12 +9,12 @@
 			<div class="topic-body">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="topic-profile-pic hidden-xs text-center d-flex flex-column sticky-top" style="top: 6rem; z-index: 1;">
-							<div>
+						<div class="topic-profile-pic hidden-xs d-flex flex-column align-items-center sticky-top" style="top: 6rem; z-index: 1;">
+							<div class="d-flex flex-column align-items-center">
 								<a class="img-thumbnail rounded-circle d-block" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 									{buildAvatar(./user, "70px", false, "", "user/picture")}
 								</a>
-								<small class="username" title="{posts.user.username}"><a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.username}</a></small>
+								<small class="username text-center" title="{posts.user.username}" style="max-width: 70px;"><a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.username}</a></small>
 							</div>
 							<div>
 								{{{ if posts.user.banned }}}
