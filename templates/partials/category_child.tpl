@@ -54,7 +54,6 @@
 						<div class="content">
 						{./content}
 						</div>
-						<p class="fade-out"></p>
 					</div>
 				</div>
 				<span class="pull-right post-preview-footer overflow-hidden position-relative opacity-75 mt-2 small">
