@@ -49,16 +49,15 @@
 					</div>
 				</div>
 			</div>
-			<div class="topic-footer d-flex justify-content-between border-top align-items-center">
-				<div>
 
+			<div class="topic-footer d-flex justify-content-between border-top align-items-center p-2">
+				<div class="d-flex gap-3 align-items-center">
 					<div class="dropdown moderator-tools" component="post/tools">
 						<a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-gear"></i></a>
 						<ul class="dropdown-menu" role="menu"></ul>
 					</div>
 
 					<!-- IF !reputation:disabled -->
-					&bull;
 					<a component="post/upvote" href="#" class="upvote<!-- IF posts.upvoted --> upvoted<!-- ENDIF posts.upvoted -->">
 						<i class="fa fa-chevron-up"></i>
 					</a>
