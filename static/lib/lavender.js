@@ -12,7 +12,7 @@ $('document').ready(function() {
 			if ($('.masonry').length) {
 				masonry = new Masonry('.masonry', {
 					itemSelector: '.category-item',
-					columnWidth: '.category-item:not(.col-lg-12)',
+					columnWidth: '.category-item:not(.col-lg-12):not(.category-section)',
 					transitionDuration: 0,
 					isInitLayout: false,
 					isOriginLeft: $('html').attr('data-dir') === 'ltr',

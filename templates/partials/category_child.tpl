@@ -1,5 +1,5 @@
 <!-- IF ./isSection -->
-<div component="categories/category" class="col-12 category-item mb-3">
+<div component="categories/category" class="col-12 category-item mb-3 category-section">
 	<h1 class="section">{./name}</h1>
 </div>
 <!-- ELSE -->
