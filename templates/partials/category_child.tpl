@@ -27,8 +27,8 @@
 
 		<div class="category-box position-relative card border-0 p-0">
 			<div class="category-info p-2">
-				<a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
-					<h4 class="text-truncate fw-bold mt-0 mb-2">{{{ if ./icon }}}<i class="fa {./icon} visible-xs-inline"></i> {{{ end }}}{./name}</h4>
+				<a class="text-truncate fw-bold mb-2 fs-4" href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
+					{{{ if ./icon }}}<i class="fa {./icon} visible-xs-inline"></i> {{{ end }}}{./name}
 				</a>
 				<div class="description ms-0 mb-1" itemprop="description">{./descriptionParsed}</div>
 				<!-- subcategories -->
