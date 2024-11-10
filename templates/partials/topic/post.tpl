@@ -28,16 +28,16 @@
 						<div class="topic-text">
 							<!-- IF @first -->
 							<h1 class="topic-title">
-								<span component="post/header" class="topic-title" itemprop="name">
-									<span component="topic/labels">
+								<div component="post/header" class="topic-title" itemprop="name">
+									<div component="topic/labels" class="d-inline-flex gap-2 {{{ if (!scheduled && (!pinned && (!locked && (!oldCid && !icons.length)))) }}}hidden{{{ end }}}">
 										<i component="topic/scheduled" class="fa fa-clock-o <!-- IF !scheduled -->hidden<!-- ENDIF !scheduled -->" title="[[topic:scheduled]]"></i>
 										<i component="topic/pinned" class="fa fa-thumb-tack <!-- IF (scheduled || !pinned) -->hidden<!-- ENDIF (scheduled || !pinned) -->" title="{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}"></i>
 										<i component="topic/locked" class="fa fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->" title="[[topic:locked]]"></i>
 										<i class="fa fa-arrow-circle-right <!-- IF !oldCid -->hidden<!-- ENDIF !oldCid -->" title="{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}"></i>
 										{{{each icons}}}{@value}{{{end}}}
-									</span>
+									</div>
 									<span component="topic/title">{title}</span>
-								</span>
+								</div>
 								<hr>
 							</h1>
 							<!-- ENDIF @first -->
@@ -54,7 +54,7 @@
 				<div class="d-flex gap-3 align-items-center">
 					<div class="dropdown moderator-tools" component="post/tools">
 						<a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-gear"></i></a>
-						<ul class="dropdown-menu" role="menu"></ul>
+						<ul class="dropdown-menu p-1" role="menu"></ul>
 					</div>
 
 					<!-- IF !reputation:disabled -->
