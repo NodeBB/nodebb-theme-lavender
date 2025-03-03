@@ -9,11 +9,12 @@
 			<div class="topic-body">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="topic-profile-pic hidden-xs d-flex flex-column align-items-center sticky-top" style="top: 6rem; z-index: 1;">
+						<div class="topic-profile-pic d-none d-lg-flex flex-column align-items-center sticky-top" style="top: 6rem; z-index: 1;">
 							<div class="d-flex flex-column align-items-center">
-								<a class="img-thumbnail rounded-circle d-block" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
+								<a class="d-block img-thumbnail rounded-circle" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
 									{buildAvatar(./user, "70px", false, "", "user/picture")}
 								</a>
+
 								<small class="username text-center" title="{posts.user.username}" style="max-width: 70px;"><a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.username}</a></small>
 							</div>
 							<div>
@@ -41,6 +42,15 @@
 								<hr>
 							</h1>
 							<!-- ENDIF @first -->
+							<div class="d-flex d-lg-none mb-2">
+								<div class="d-flex gap-2 align-items-center text-sm">
+									<a class="d-block rounded-circle" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
+										{buildAvatar(./user, "20px", false, "", "user/picture")}
+									</a>
+
+									<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" class="username text-center text-nowrap" title="{posts.user.username}" style="max-width: 70px;">{./user.username}</a>
+								</div>
+							</div>
 							<div component="post/content" class="post-content" itemprop="text">{posts.content}</div>
 							<!-- IF posts.user.signature -->
 							<div class="post-signature">{posts.user.signature}</div>
@@ -50,7 +60,7 @@
 				</div>
 			</div>
 
-			<div class="topic-footer d-flex justify-content-between border-top align-items-center p-2">
+			<div class="topic-footer d-flex flex-wrap gap-2 justify-content-between border-top align-items-center p-2">
 				<div class="d-flex gap-3 align-items-center">
 					<div class="dropdown moderator-tools" component="post/tools">
 						<a href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-gear"></i></a>
@@ -74,7 +84,7 @@
 						&bull; {posts.user.custom_profile_info.content}
 						{{{ end }}}
 					<!-- ENDIF posts.user.custom_profile_info.length -->
-					<span class="post-tools">
+					<span class="d-flex flex-nowrap gap-2 post-tools">
 						<!-- IF !posts.selfPost -->
 						<!-- IF posts.user.userslug -->
 						<!-- IF loggedIn -->
@@ -89,25 +99,21 @@
 						<button component="post/reply" class="btn btn-sm btn-link <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->" type="button"><i class="fa fa-reply"></i><span class="hidden-xs-inline"> [[topic:reply]]</span></button>
 					</span>
 				</div>
-				<div class="d-flex pe-3">
-					<small class="">
-						<span>
-							<!-- IF posts.user.userslug -->
-							<i component="user/status" class="fa fa-circle status {posts.user.status}" title='[[global:{posts.user.status}]]'></i>
-							<!-- ENDIF posts.user.userslug -->
-							<span data-username="{posts.user.username}" data-uid="{posts.user.uid}">
-								<!-- IF posts.user.uid -->
-								<strong><a href="{config.relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong> &bull; <span class="timeago" title="{posts.timestampISO}"></span>
-								<!-- ELSE -->
-								[[global:guest]] | <span class="timeago" title="{posts.timestampISO}"></span>
-								<!-- ENDIF posts.user.uid -->
-							</span>
+				<div class="d-none d-lg-flex pe-3 text-xs">
+					<div class="d-flex gap-2 align-items-center flex-nowrap">
+						{{{ if posts.user.userslug }}}
+						<span component="user/status" class="d-inline-block border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
+						{{{ end }}}
+						<span class="text-nowrap" data-username="{posts.user.username}" data-uid="{posts.user.uid}">
+							<!-- IF posts.user.uid -->
+							<strong><a href="{config.relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong> &bull; <span class="timeago" title="{posts.timestampISO}"></span>
+							<!-- ELSE -->
+							[[global:guest]] | <span class="timeago" title="{posts.timestampISO}"></span>
+							<!-- ENDIF posts.user.uid -->
 						</span>
+					</div>
 
-
-						<span component="post/editor" class="<!-- IF !posts.editor.username --> hidden<!-- ENDIF !posts.editor.username -->">, [[global:last-edited-by, {posts.editor.username}]] <span class="timeago" title="{isoTimeToLocaleString(posts.editedISO, config.userLang)}"></span></span>
-
-					</small>
+					<span component="post/editor" class="text-nowrap {{{ if !posts.editor.username }}} hidden{{{ end }}}">, [[global:last-edited-by, {posts.editor.username}]] <span class="timeago" title="{isoTimeToLocaleString(posts.editedISO, config.userLang)}"></span></span>
 				</div>
 			</div>
 		</div>

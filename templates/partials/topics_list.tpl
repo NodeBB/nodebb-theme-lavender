@@ -59,21 +59,21 @@
 				</div>
 
 				<div class="col-1 text-center category-stat hidden-xs stats-votes">
-					<strong class="fs-3" title="{topics.votes}">{humanReadableNumber(topics.votes)}</strong><br />
-					<small class="text-muted">[[global:votes]]</small>
+					<strong class="fs-3 text-nowrap" title="{topics.votes}">{humanReadableNumber(topics.votes)}</strong><br />
+					<small class="text-muted text-nowrap">[[global:votes]]</small>
 				</div>
 
 				<div class="col-1 text-center category-stat hidden-xs stats-postcount">
-					<strong class="fs-3" title="{topics.postcount}">{humanReadableNumber(topics.postcount)}</strong><br />
-					<small class="text-muted">[[global:posts]]</small>
+					<strong class="fs-3 text-nowrap" title="{topics.postcount}">{humanReadableNumber(topics.postcount)}</strong><br />
+					<small class="text-muted text-nowrap">[[global:posts]]</small>
 				</div>
 
 				<div class="col-1 text-center category-stat hidden-xs stats-viewcount">
-					<strong class="fs-3" title="{topics.viewcount}">{humanReadableNumber(topics.viewcount)}</strong><br />
-					<small class="text-muted">[[global:views]]</small>
+					<strong class="fs-3 text-nowrap" title="{topics.viewcount}">{humanReadableNumber(topics.viewcount)}</strong><br />
+					<small class="text-muted text-nowrap">[[global:views]]</small>
 				</div>
 
-				<div class="col-2 category-stat replies hidden-sm hidden-xs d-flex align-items-center" component="topic/teaser">
+				<div class="col-2 category-stat replies hidden-sm d-none d-lg-flex align-items-center" component="topic/teaser">
 					{{{ if topics.unreplied }}}
 					<p class="no-replies"><a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">[[category:no-replies]]</a></p>
 					{{{ else }}}
