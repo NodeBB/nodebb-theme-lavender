@@ -1,8 +1,8 @@
-$('document').ready(function() {
+$('document').ready(function () {
 	require([
 		'masonry-layout',
 		'imagesloaded',
-	], function(Masonry, imagesLoaded) {
+	], function (Masonry) {
 		var fixed = localStorage.getItem('fixed') || 1;
 		var masonry;
 		var masonryCalled = false;
@@ -18,29 +18,25 @@ $('document').ready(function() {
 					isOriginLeft: $('html').attr('data-dir') === 'ltr',
 				});
 
-				$('.row.categories > div p img').imagesLoaded(function() {
+				$('.row.categories > div p img').imagesLoaded(function () {
 					masonry.layout();
 				});
 
 				var saved = JSON.parse(localStorage.getItem('masonry:layout'));
 				if (saved) {
-					for (var cid in saved) {
-						if (saved.hasOwnProperty(cid)) {
-							var category = saved[cid];
-
-							$('.category-item[data-cid="' + cid + '"]').css({
-								left: category.left,
-								top: category.top,
-								position: 'absolute'
-							});
-						}
+					for (const [cid, category] of Object.entries(saved)) {
+						$('.category-item[data-cid="' + cid + '"]').css({
+							left: category.left,
+							top: category.top,
+							position: 'absolute',
+						});
 					}
 				}
 
-				masonry.on('layoutComplete', function() {
+				masonry.on('layoutComplete', function () {
 					var saved = {};
 
-					$('.category-item').each(function() {
+					$('.category-item').each(function () {
 						var $this = $(this);
 
 						saved[$this.attr('data-cid')] = {
@@ -64,9 +60,7 @@ $('document').ready(function() {
 
 		resize(fixed);
 
-		$(window).on('action:ajaxify.end', function(ev, data) {
-			var url = data.url;
-
+		$(window).on('action:ajaxify.end', function (ev, data) {
 			if(!/^admin\//.test(data.url) && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 				doMasonry();
 				if ($('.categories').length) {
@@ -79,7 +73,7 @@ $('document').ready(function() {
 			setupResizer();
 		}
 
-		$(window).on('action:posts.loaded', function() {
+		$(window).on('action:posts.loaded', function () {
 			doMasonry();
 		});
 
@@ -93,10 +87,10 @@ $('document').ready(function() {
 			div.css({
 				position:'fixed',
 				bottom: '20px',
-				right: '20px'
+				right: '20px',
 			}).hide().appendTo(document.body);
 
-			$(window).on('mousemove', function(ev) {
+			$(window).on('mousemove', function (ev) {
 				if (ev.clientX > $(window).width() - 150 && ev.clientY > $(window).height() - 150) {
 					div.fadeIn();
 				} else {
@@ -104,7 +98,7 @@ $('document').ready(function() {
 				}
 			});
 
-			div.find('.resizer').on('click', function() {
+			div.find('.resizer').on('click', function () {
 				fixed = parseInt(fixed, 10) === 1 ? 0 : 1;
 				resize(fixed);
 				doMasonry();
@@ -113,9 +107,9 @@ $('document').ready(function() {
 	});
 
 
-	$(window).on('action:ajaxify.start', function() {
+	$(window).on('action:ajaxify.start', function () {
 		if ($('.navbar .navbar-collapse').hasClass('in')) {
-			$('.navbar-header button').click();
+			$('.navbar-header button').trigger('click');
 		}
 	});
 });

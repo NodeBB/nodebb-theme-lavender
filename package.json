@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/NodeBB/nodebb-theme-lavender"
   },
+  "scripts": {
+    "lint": "eslint ."
+   },
   "keywords": [
     "nodebb",
     "lavender",
@@ -17,6 +20,10 @@
     "imagesloaded": "4.1.4",
     "masonry-layout": "4.2.2",
     "pulling": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "9.25.1",
+    "eslint-config-nodebb": "^1.1.4"
   },
   "author": {
     "name": "psychobunny",
