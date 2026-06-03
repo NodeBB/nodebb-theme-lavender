@@ -22,8 +22,8 @@
     "pulling": "^2.0.0"
   },
   "devDependencies": {
-    "eslint": "9.25.1",
-    "eslint-config-nodebb": "^1.1.4"
+    "@eslint/js": "^10.0.1",
+    "eslint-config-nodebb": "^2.0.2"
   },
   "author": {
     "name": "psychobunny",
@@ -34,6 +34,6 @@
     "url": "https://github.com/NodeBB/nodebb-theme-lavender/issues"
   },
   "nbbpm": {
-    "compatibility": "^2.0.0"
+    "compatibility": "^4.12.0"
   }
 }
