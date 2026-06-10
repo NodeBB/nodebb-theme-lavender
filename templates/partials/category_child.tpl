@@ -30,7 +30,7 @@
 				<a class="d-block text-truncate fw-bold mb-2 fs-4" href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
 					{{{ if ./icon }}}<i class="fa {./icon} visible-xs-inline"></i> {{{ end }}}{./name}
 				</a>
-				<div class="description ms-0 mb-1" itemprop="description">{./descriptionParsed}</div>
+				<div class="description ms-0 mb-1" itemprop="description">{{./descriptionParsed}}</div>
 				<!-- subcategories -->
 				<div class="">
 					{{{ each ./children }}}
