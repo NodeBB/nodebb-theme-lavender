@@ -35,7 +35,7 @@
 				<div class="">
 					{{{ each ./children }}}
 					<div class="mb-1">
-					{buildCategoryIcon(@value, "24px", "rounded-circle")} <a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-muted">{./name}</a>
+					{{buildCategoryIcon(@value, "24px", "rounded-circle")}} <a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-muted">{./name}</a>
 					</div>
 					{{{ end }}}
 				</div>
@@ -48,7 +48,7 @@
 				<hr class="mb-2 mt-1" />
 				<div class="d-flex gap-1">
 					<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
-						{buildAvatar(./user, "24px", true)}
+						{{buildAvatar(./user, "24px", true)}}
 					</a>
 					<div class="post-preview-content overflow-hidden">
 						<div class="content">

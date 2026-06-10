@@ -17,7 +17,7 @@
 							<!-- IF topics.thumb -->
 							<img src="{topics.thumb}" class="user-img" title="{topics.user.username}" />
 							<!-- ELSE -->
-							{buildAvatar(./user, "48px", true)}
+							{{buildAvatar(./user, "48px", true)}}
 							<!-- ENDIF topics.thumb -->
 						</a>
 					</div>
@@ -36,7 +36,7 @@
 							{{{ end }}}
 
 							<div class="d-inline-block mb-1">
-								{buildCategoryIcon(./category, "24px", "rounded-circle")}
+								{{buildCategoryIcon(./category, "24px", "rounded-circle")}}
 								<a class="text-muted small" href="{config.relative_path}/category/{topics.category.slug}">{topics.category.name}</a>
 							</div>
 							&bull; <span class="timeago small" title="{topics.timestampISO}"></span>
@@ -78,7 +78,7 @@
 					<p class="no-replies"><a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">[[category:no-replies]]</a></p>
 					{{{ else }}}
 					<a class="me-2" href="{{{ if ./teaser.user.userslug }}}{config.relative_path}/user/{./teaser.user.userslug}{{{ else }}}#{{{ end }}}">
-						{buildAvatar(./teaser.user, "24px", true)}
+						{{buildAvatar(./teaser.user, "24px", true)}}
 					</a>
 					<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
 						<span class="timeago" title="{topics.teaser.timestampISO}"></span>
