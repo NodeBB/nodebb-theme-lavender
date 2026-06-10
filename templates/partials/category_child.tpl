@@ -52,7 +52,7 @@
 					</a>
 					<div class="post-preview-content overflow-hidden">
 						<div class="content">
-						{./content}
+						{{./content}}
 						</div>
 					</div>
 				</div>

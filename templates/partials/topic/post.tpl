@@ -81,7 +81,7 @@
 
 					<!-- IF posts.user.custom_profile_info.length -->
 						{{{ each custom_profile_info}}}
-						&bull; {posts.user.custom_profile_info.content}
+						&bull; {{posts.user.custom_profile_info.content}}
 						{{{ end }}}
 					<!-- ENDIF posts.user.custom_profile_info.length -->
 					<span class="d-flex flex-nowrap gap-2 post-tools">
