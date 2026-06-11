@@ -3,7 +3,7 @@
 	{{{ each topics }}}
 	<li component="category/topic" class="category-item card card-body px-2 py-0 border-top-0 border-bottom-0 border-end-0 {function.generateTopicClass}"  itemprop="itemListElement" <!-- IMPORT partials/data/category.tpl -->>
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
-		<meta itemprop="name" content="{{escapeTxHtml(title)}}">
+		<meta itemprop="name" content="{{generateTopicTitle(@value)}}">
 
 		<div class="p-2 mb-0">
 			<div class="row">

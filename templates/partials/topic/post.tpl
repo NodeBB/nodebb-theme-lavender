@@ -37,7 +37,7 @@
 										<i class="fa fa-arrow-circle-right <!-- IF !oldCid -->hidden<!-- ENDIF !oldCid -->" title="{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}"></i>
 										{{{each icons}}}{@value}{{{end}}}
 									</div>
-									<span component="topic/title">{{escapeTxHtml(title)}}</span>
+									<span component="topic/title">{title}</span>
 								</div>
 								<hr>
 							</h1>
