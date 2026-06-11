@@ -37,7 +37,7 @@
 										<i class="fa fa-arrow-circle-right <!-- IF !oldCid -->hidden<!-- ENDIF !oldCid -->" title="{{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}"></i>
 										{{{each icons}}}{@value}{{{end}}}
 									</div>
-									<span component="topic/title">{title}</span>
+									<span component="topic/title">{{escapeTxHtml(title)}}</span>
 								</div>
 								<hr>
 							</h1>
@@ -53,7 +53,7 @@
 							</div>
 							<div component="post/content" class="post-content" itemprop="text">{{posts.content}}</div>
 							<!-- IF posts.user.signature -->
-							<div class="post-signature">{posts.user.signature}</div>
+							<div class="post-signature">{{posts.user.signature}}</div>
 							<!-- ENDIF posts.user.signature -->
 						</div>
 					</div>

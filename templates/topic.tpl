@@ -4,8 +4,10 @@
 	{{widgets.header.html}}
 	{{{end}}}
 </div>
-<div class="row">
+<div class="row" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
+	<!-- IMPORT partials/topics/meta-tags.tpl -->
 	<div class="topic {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}">
+
 		<div component="topic/deleted/message" class="alert alert-warning{{{ if !deleted }}} hidden{{{ end }}}">[[topic:deleted-message]]</div>
 
 		<ul component="topic" id="post-container" class="posts" data-tid="{tid}">
