@@ -30,9 +30,9 @@
 							{{{each topics.icons}}}{@value}{{{end}}}
 
 							{{{ if topics.noAnchor }}}
-							<span class="fs-4 topic-title" component="topic/header">{{escapeTxHtml(topics.title)}}</span><br />
+							<span class="fs-4 topic-title" component="topic/header">{{generateTopicTitle(topics.title)}}</span><br />
 							{{{ else }}}
-							<a class="fs-4 topic-title" component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">{{escapeTxHtml(topics.title)}}</a><br />
+							<a class="fs-4 topic-title" component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">{{generateTopicTitle(topics.title)}}</a><br />
 							{{{ end }}}
 
 							<div class="d-inline-block mb-1">
