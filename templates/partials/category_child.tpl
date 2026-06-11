@@ -1,13 +1,13 @@
 <!-- IF ./isSection -->
 <div component="categories/category" class="col-12 category-item mb-3 category-section">
-	<h1 class="section">{./name}</h1>
+	<h1 class="section">{{escapeTxHtml(./name)}}</h1>
 </div>
 <!-- ELSE -->
 <div component="categories/category" class="{{{ if ./class }}}{./class}{{{ else }}}col-md-3 col-sm-6 col-12{{{ end }}} category-item mb-3" data-cid="{./cid}" data-numRecentReplies="{./numRecentReplies}">
-	<meta itemprop="name" content="{./name}">
+	<meta itemprop="name" content="{{escapeTxHtml(./name)}}">
 
 	<div class="category-icon shadow-xs">
-		<a style="color: {./color};" href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
+		<a style="color: {./color};" href="{{{ if ./link }}}{{escapeTxHtml(./link)}}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
 			<div
 				id="category-{./cid}"
 				class="position-relative text-center p-4 category-header category-header-image-{./imageClass}"
@@ -27,15 +27,15 @@
 
 		<div class="category-box position-relative card border-0 p-0">
 			<div class="category-info p-2">
-				<a class="d-block text-truncate fw-bold mb-2 fs-4" href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
-					{{{ if ./icon }}}<i class="fa {./icon} visible-xs-inline"></i> {{{ end }}}{./name}
+				<a class="d-block text-truncate fw-bold mb-2 fs-4" href="{{{ if ./link }}}{{escapeTxHtml(./link)}}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
+					{{{ if ./icon }}}<i class="fa {./icon} visible-xs-inline"></i> {{{ end }}}{{escapeTxHtml(./name)}}
 				</a>
 				<div class="description ms-0 mb-1" itemprop="description">{{./descriptionParsed}}</div>
 				<!-- subcategories -->
 				<div class="">
 					{{{ each ./children }}}
 					<div class="mb-1">
-					{{buildCategoryIcon(@value, "24px", "rounded-circle")}} <a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-muted">{./name}</a>
+					{{buildCategoryIcon(@value, "24px", "rounded-circle")}} <a href="{{{ if ./link }}}{{escapeTxHtml(./link)}}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-muted">{{escapeTxHtml(./name)}}</a>
 					</div>
 					{{{ end }}}
 				</div>
