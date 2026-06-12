@@ -12,7 +12,7 @@
 						<div class="topic-profile-pic d-none d-lg-flex flex-column align-items-center sticky-top" style="top: 6rem; z-index: 1;">
 							<div class="d-flex flex-column align-items-center">
 								<a class="d-block img-thumbnail rounded-circle" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
-									{buildAvatar(./user, "70px", false, "", "user/picture")}
+									{{buildAvatar(./user, "70px", false, "", "user/picture")}}
 								</a>
 
 								<small class="username text-center" title="{posts.user.username}" style="max-width: 70px;"><a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.username}</a></small>
@@ -45,15 +45,15 @@
 							<div class="d-flex d-lg-none mb-2">
 								<div class="d-flex gap-2 align-items-center text-sm">
 									<a class="d-block rounded-circle" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
-										{buildAvatar(./user, "20px", false, "", "user/picture")}
+										{{buildAvatar(./user, "20px", false, "", "user/picture")}}
 									</a>
 
 									<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" class="username text-center text-nowrap" title="{posts.user.username}" style="max-width: 70px;">{./user.username}</a>
 								</div>
 							</div>
-							<div component="post/content" class="post-content" itemprop="text">{posts.content}</div>
+							<div component="post/content" class="post-content" itemprop="text">{{posts.content}}</div>
 							<!-- IF posts.user.signature -->
-							<div class="post-signature">{posts.user.signature}</div>
+							<div class="post-signature">{{posts.user.signature}}</div>
 							<!-- ENDIF posts.user.signature -->
 						</div>
 					</div>
@@ -81,7 +81,7 @@
 
 					<!-- IF posts.user.custom_profile_info.length -->
 						{{{ each custom_profile_info}}}
-						&bull; {posts.user.custom_profile_info.content}
+						&bull; {{posts.user.custom_profile_info.content}}
 						{{{ end }}}
 					<!-- ENDIF posts.user.custom_profile_info.length -->
 					<span class="d-flex flex-nowrap gap-2 post-tools">
