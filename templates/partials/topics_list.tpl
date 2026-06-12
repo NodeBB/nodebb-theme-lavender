@@ -3,7 +3,7 @@
 	{{{ each topics }}}
 	<li component="category/topic" class="category-item card card-body px-2 py-0 border-top-0 border-bottom-0 border-end-0 {function.generateTopicClass}"  itemprop="itemListElement" <!-- IMPORT partials/data/category.tpl -->>
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
-		<meta itemprop="name" content="{{generateTopicTitle(@value)}}">
+		<meta itemprop="name" content="{./title}">
 
 		<div class="p-2 mb-0">
 			<div class="row">
@@ -30,9 +30,9 @@
 							{{{each topics.icons}}}{@value}{{{end}}}
 
 							{{{ if topics.noAnchor }}}
-							<span class="fs-4 topic-title" component="topic/header">{{generateTopicTitle(topics.title)}}</span><br />
+							<span class="fs-4 topic-title" component="topic/header">{./title}</span><br />
 							{{{ else }}}
-							<a class="fs-4 topic-title" component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">{{generateTopicTitle(topics.title)}}</a><br />
+							<a class="fs-4 topic-title" component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">{./title}</a><br />
 							{{{ end }}}
 
 							<div class="d-inline-block mb-1">
