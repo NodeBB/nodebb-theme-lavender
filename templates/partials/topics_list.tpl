@@ -80,9 +80,7 @@
 					<a class="me-2" href="{{{ if ./teaser.user.userslug }}}{config.relative_path}/user/{./teaser.user.userslug}{{{ else }}}#{{{ end }}}">
 						{{buildAvatar(./teaser.user, "24px", true)}}
 					</a>
-					<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-						<span class="timeago" title="{topics.teaser.timestampISO}"></span>
-					</a>
+					<a class="timeago" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="{topics.teaser.timestampISO}"></a>
 					{{{ end }}}
 				</div>
 			</div>
