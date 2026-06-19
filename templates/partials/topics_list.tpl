@@ -3,7 +3,7 @@
 	{{{ each topics }}}
 	<li component="category/topic" class="category-item card card-body px-2 py-0 border-top-0 border-bottom-0 border-end-0 {function.generateTopicClass}"  itemprop="itemListElement" <!-- IMPORT partials/data/category.tpl -->>
 		<a id="{./index}" data-index="{./index}" component="topic/anchor"></a>
-		<meta itemprop="name" content="{function.stripTags, title}">
+		<meta itemprop="name" content="{./title}">
 
 		<div class="p-2 mb-0">
 			<div class="row">
@@ -17,7 +17,7 @@
 							<!-- IF topics.thumb -->
 							<img src="{topics.thumb}" class="user-img" title="{topics.user.username}" />
 							<!-- ELSE -->
-							{buildAvatar(./user, "48px", true)}
+							{{buildAvatar(./user, "48px", true)}}
 							<!-- ENDIF topics.thumb -->
 						</a>
 					</div>
@@ -30,13 +30,13 @@
 							{{{each topics.icons}}}{@value}{{{end}}}
 
 							{{{ if topics.noAnchor }}}
-							<span class="fs-4 topic-title" component="topic/header">{topics.title}</span><br />
+							<span class="fs-4 topic-title" component="topic/header">{./title}</span><br />
 							{{{ else }}}
-							<a class="fs-4 topic-title" component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">{topics.title}</a><br />
+							<a class="fs-4 topic-title" component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">{./title}</a><br />
 							{{{ end }}}
 
 							<div class="d-inline-block mb-1">
-								{buildCategoryIcon(./category, "24px", "rounded-circle")}
+								{{buildCategoryIcon(./category, "24px", "rounded-circle")}}
 								<a class="text-muted small" href="{config.relative_path}/category/{topics.category.slug}">{topics.category.name}</a>
 							</div>
 							&bull; <span class="timeago small" title="{topics.timestampISO}"></span>
@@ -78,11 +78,9 @@
 					<p class="no-replies"><a href="{config.relative_path}/topic/{topics.slug}" itemprop="url">[[category:no-replies]]</a></p>
 					{{{ else }}}
 					<a class="me-2" href="{{{ if ./teaser.user.userslug }}}{config.relative_path}/user/{./teaser.user.userslug}{{{ else }}}#{{{ end }}}">
-						{buildAvatar(./teaser.user, "24px", true)}
+						{{buildAvatar(./teaser.user, "24px", true)}}
 					</a>
-					<a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-						<span class="timeago" title="{topics.teaser.timestampISO}"></span>
-					</a>
+					<a class="timeago" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}" title="{topics.teaser.timestampISO}"></a>
 					{{{ end }}}
 				</div>
 			</div>

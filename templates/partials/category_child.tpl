@@ -28,14 +28,14 @@
 		<div class="category-box position-relative card border-0 p-0">
 			<div class="category-info p-2">
 				<a class="d-block text-truncate fw-bold mb-2 fs-4" href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" itemprop="url">
-					{{{ if ./icon }}}<i class="fa {./icon} visible-xs-inline"></i> {{{ end }}}{./name}
+					{{{ if ./icon }}}<i class="fa {./icon} visible-xs-inline"></i> {{{ end }}}{tx(./name)}
 				</a>
-				<div class="description ms-0 mb-1" itemprop="description">{./descriptionParsed}</div>
+				<div class="description ms-0 mb-1" itemprop="description">{{./descriptionParsed}}</div>
 				<!-- subcategories -->
 				<div class="">
 					{{{ each ./children }}}
 					<div class="mb-1">
-					{buildCategoryIcon(@value, "24px", "rounded-circle")} <a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-muted">{./name}</a>
+					{{buildCategoryIcon(@value, "24px", "rounded-circle")}} <a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-muted">{tx(./name)}</a>
 					</div>
 					{{{ end }}}
 				</div>
@@ -48,11 +48,11 @@
 				<hr class="mb-2 mt-1" />
 				<div class="d-flex gap-1">
 					<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">
-						{buildAvatar(./user, "24px", true)}
+						{{buildAvatar(./user, "24px", true)}}
 					</a>
 					<div class="post-preview-content overflow-hidden">
 						<div class="content">
-						{./content}
+						{{txEscape(./content)}}
 						</div>
 					</div>
 				</div>
