@@ -51,7 +51,9 @@
 									<a href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}" class="username text-center text-nowrap" title="{posts.user.username}" style="max-width: 70px;">{./user.username}</a>
 								</div>
 							</div>
-							<div component="post/content" class="post-content" itemprop="text">{{txEscape(posts.content)}}</div>
+							<div component="post/content" class="post-content" itemprop="text">
+								{{renderContent(posts.content, posts.deleted)}}
+							</div>
 							<!-- IF posts.user.signature -->
 							<div class="post-signature">{{txEscape(posts.user.signature)}}</div>
 							<!-- ENDIF posts.user.signature -->
