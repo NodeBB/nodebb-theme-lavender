@@ -30,9 +30,9 @@
 							{{{each topics.icons}}}{@value}{{{end}}}
 
 							{{{ if topics.noAnchor }}}
-							<span class="fs-4 topic-title" component="topic/header">{renderContent(./title, ./deleted)}</span><br />
+							<span class="fs-4 topic-title" component="topic/header">{{renderTitle(./title, ./deleted)}}</span><br />
 							{{{ else }}}
-							<a class="fs-4 topic-title" component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">{renderContent(./title, ./deleted)}</a><br />
+							<a class="fs-4 topic-title" component="topic/header" href="{config.relative_path}/topic/{topics.slug}" itemprop="url">{{renderTitle(./title, ./deleted)}}</a><br />
 							{{{ end }}}
 
 							<div class="d-inline-block mb-1">
