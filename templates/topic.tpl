@@ -16,7 +16,7 @@
 			{{{ end }}}
 		</ul>
 
-		<div class="post-bar col-12 clearfix">
+		<div class="post-bar d-flex justify-content-end">
 			<!-- IMPORT partials/post_bar.tpl -->
 		</div>
 
