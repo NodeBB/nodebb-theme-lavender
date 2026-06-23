@@ -52,7 +52,7 @@
 								</div>
 							</div>
 							<div component="post/content" class="post-content" itemprop="text">
-								{{renderContent(posts.content, posts.deleted)}}
+								{{{ if posts.txContent }}}{{tx(posts.content)}}{{{ else }}}{{txEscape(posts.content)}}{{{ end }}}
 							</div>
 							<!-- IF posts.user.signature -->
 							<div class="post-signature">{{txEscape(posts.user.signature)}}</div>
