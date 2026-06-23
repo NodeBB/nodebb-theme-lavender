@@ -35,7 +35,7 @@
 				<div class="">
 					{{{ each ./children }}}
 					<div class="mb-1">
-					{{buildCategoryIcon(@value, "24px", "rounded-circle")}} <a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-muted">{tx(./name)}</a>
+					{{buildCategoryIcon(@value, "24px", "rounded-circle")}} <a href="{{{ if ./link }}}{./link}{{{ else }}}{config.relative_path}/category/{./slug}{{{ end }}}" class="text-muted">{{tx(./name)}}</a>
 					</div>
 					{{{ end }}}
 				</div>
