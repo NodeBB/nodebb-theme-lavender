@@ -52,10 +52,10 @@
 								</div>
 							</div>
 							<div component="post/content" class="post-content" itemprop="text">
-								{{{ if posts.txContent }}}{{tx(posts.content)}}{{{ else }}}{{txEscape(posts.content)}}{{{ end }}}
+								{{{ if posts.txContent }}}{{tx(posts.content)}}{{{ else }}}{{posts.content}}{{{ end }}}
 							</div>
 							<!-- IF posts.user.signature -->
-							<div class="post-signature">{{txEscape(posts.user.signature)}}</div>
+							<div class="post-signature">{{posts.user.signature}}</div>
 							<!-- ENDIF posts.user.signature -->
 						</div>
 					</div>
