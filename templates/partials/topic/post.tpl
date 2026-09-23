@@ -1,10 +1,7 @@
 <li component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
 	<a component="post/anchor" data-index="{./index}" id="{increment(./index, "1")}"></a>
+	<!-- IMPORT partials/topic/post-meta-tags.tpl -->
 	<div class="post-row">
-
-		<meta itemprop="datePublished" content="{posts.timestampISO}">
-		<meta itemprop="dateModified" content="{posts.editedISO}">
-
 		<div class="topic-item">
 			<div class="topic-body">
 				<div class="row">
@@ -29,7 +26,7 @@
 						<div class="topic-text">
 							<!-- IF @first -->
 							<h1 class="topic-title">
-								<div component="post/header" class="topic-title" itemprop="name">
+								<div component="post/header" class="topic-title">
 									<div component="topic/labels" class="d-inline-flex gap-2 {{{ if (!scheduled && (!pinned && (!locked && (!oldCid && !icons.length)))) }}}hidden{{{ end }}}">
 										<i component="topic/scheduled" class="fa fa-clock-o <!-- IF !scheduled -->hidden<!-- ENDIF !scheduled -->" title="[[topic:scheduled]]"></i>
 										<i component="topic/pinned" class="fa fa-thumb-tack <!-- IF (scheduled || !pinned) -->hidden<!-- ENDIF (scheduled || !pinned) -->" title="{{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {pinExpiryISO}]]{{{ end }}}"></i>
