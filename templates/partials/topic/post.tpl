@@ -104,11 +104,11 @@
 						<span component="user/status" class="d-inline-block border border-white border-2 rounded-circle status {posts.user.status}"><span class="visually-hidden">[[global:{posts.user.status}]]</span></span>
 						{{{ end }}}
 						<span class="text-nowrap" data-username="{posts.user.username}" data-uid="{posts.user.uid}">
-							<!-- IF posts.user.uid -->
-							<strong><a href="{config.relative_path}/user/{posts.user.userslug}" itemprop="author">{posts.user.username}</a></strong> &bull; <span class="timeago" title="{posts.timestampISO}"></span>
-							<!-- ELSE -->
+							{{{ if posts.user.uid }}}
+							<strong><a href="{config.relative_path}/user/{posts.user.userslug}">{posts.user.username}</a></strong> &bull; <span class="timeago" title="{posts.timestampISO}"></span>
+							{{{ else }}}
 							[[global:guest]] | <span class="timeago" title="{posts.timestampISO}"></span>
-							<!-- ENDIF posts.user.uid -->
+							{{{ end }}}
 						</span>
 					</div>
 
